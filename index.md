@@ -4,9 +4,6 @@ hero:
   name: 机器人创新中心
   text: 广东省机器人创新中心
   tagline: 打造机器人产业技术创新平台和服务平台
-  image:
-    src: /banner.jpg
-    alt: Center Image
   actions:
     - theme: brand
       text: 了解更多
@@ -38,6 +35,14 @@ features:
 ## 中心简介
 
 广东省机器人创新中心致力于打造机器人产业技术创新平台和服务平台，以科技创新驱动机器人产业发展。我们整合产学研资源，推动机器人技术在各行业的应用与发展。
+
+<!-- 简化轮播图实现 -->
+<div class="simple-slider">
+  <div class="slider-content slider-content-1">
+    <h3>机器人创新技术</h3>
+    <p>推动机器人技术在各行业的应用与发展</p>
+  </div>
+</div>
 
 ## 创新动态
 
@@ -105,6 +110,62 @@ features:
   margin: 3rem 0 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #eaecef;
+}
+
+/**
+ * 简化轮播图样式
+ * 使用一个更简单的结构实现视觉效果
+ */
+.simple-slider {
+  height: 300px;
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.slider-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.slider-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+.slider-content h3, .slider-content p {
+  position: relative;
+  z-index: 1;
+}
+
+.slider-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.slider-content p {
+  font-size: 1.2rem;
+}
+
+.slider-content-1 {
+  background: linear-gradient(135deg, #0066cc, #004080);
 }
 
 /**
@@ -247,6 +308,18 @@ features:
 }
 
 /**
+ * 全局背景样式
+ * 为页面添加淡色背景
+ */
+:root {
+  --vp-background: #f8f9fa;
+}
+
+.VPContent {
+  background-color: var(--vp-background);
+}
+
+/**
  * 响应式适配 - 移动设备
  * 在小屏幕设备上调整样式以提供更好的用户体验
  */
@@ -257,6 +330,18 @@ features:
   
   .home-content h2 {
     font-size: 1.5rem;
+  }
+  
+  .simple-slider {
+    height: 250px;
+  }
+  
+  .slider-content h3 {
+    font-size: 1.6rem;
+  }
+  
+  .slider-content p {
+    font-size: 1rem;
   }
 }
 </style>
