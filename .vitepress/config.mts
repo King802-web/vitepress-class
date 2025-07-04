@@ -9,13 +9,13 @@ export default defineConfig({
    * 网站标题
    * 显示在浏览器标签页和首页标题中
    */
-  title: "广东省机器人创新中心",
+  title: "在线教学平台",
   
   /**
    * 网站描述
    * 用于SEO优化，显示在搜索引擎结果中
    */
-  description: "打造机器人产业技术创新平台和服务平台",
+  description: "教学创新平台和服务平台",
   
   /**
    * 主题配置
@@ -41,66 +41,16 @@ export default defineConfig({
         items: [
           { text: '中心简介', link: '/about/introduction' },
           { text: '成立背景', link: '/about/background' },
-          { text: '建设目标', link: '/about/goals' },
-          { text: '中心任务/功能', link: '/about/functions' },
-          { text: '运行机制', link: '/about/mechanism' },
-          { text: '创新中心分中心', link: '/about/branches' },
           { text: '文化理念', link: '/about/culture' },
-          { text: '荣誉资质', link: '/about/honors' }
         ]
       },
+      // 新增课程中心下拉菜单
       { 
-        // 下拉菜单 - 产品系统
-        text: '产品系统', 
+        text: '课程中心', 
         items: [
-          { text: 'RobDTS软件', link: '/products/robdts' },
-          { text: '柔性制造系统', link: '/products/flexible-manufacturing' },
-          { text: '智能磨抛工作站', link: '/products/polishing-station' },
-          { text: '智能制造实训平台', link: '/products/training-platform' },
-          { text: '智能焊接工作站', link: '/products/welding-station' },
-          { text: '售后服务', link: '/products/after-sales' }
-        ]
-      },
-      { 
-        // 下拉菜单 - 研发合作
-        text: '研发合作', 
-        items: [
-          { text: '共性关键技术', link: '/rd/key-technologies' },
-          { text: '技术服务', link: '/rd/tech-services' },
-          { text: '省企业重点实验室', link: '/rd/key-laboratory' },
-          { text: '产学研合作', link: '/rd/industry-university-research' },
-          { text: '驻站研发', link: '/rd/on-site-rd' }
-        ]
-      },
-      { 
-        // 下拉菜单 - 成果转化
-        text: '成果转化', 
-        items: [
-          { text: '技术推广', link: '/achievements/tech-promotion' },
-          { text: '专利授权', link: '/achievements/patents' },
-          { text: '联合制造', link: '/achievements/joint-manufacturing' },
-          { text: '产业孵化', link: '/achievements/incubation' },
-          { text: '标准制定', link: '/achievements/standards' }
-        ]
-      },
-      { 
-        // 下拉菜单 - 创新动态
-        text: '创新动态', 
-        items: [
-          { text: '中心动态', link: '/news/center-news' },
-          { text: '媒体聚焦', link: '/news/media-focus' },
-          { text: '行业动态', link: '/news/industry-news' },
-          { text: '前沿技术', link: '/news/cutting-edge' }
-        ]
-      },
-      { 
-        // 下拉菜单 - 创新联盟
-        text: '创新联盟', 
-        items: [
-          { text: '联盟介绍', link: '/alliance/introduction' },
-          { text: '联盟成员', link: '/alliance/members' },
-          { text: '联盟动态', link: '/alliance/news' },
-          { text: '湾区资讯', link: '/alliance/bay-area-info' }
+          { text: 'PC硬件与软件', link: '/courses/pc-basics/' },
+          { text: '网络原理', link: '/courses/network/' },
+          { text: '功能规划', link: '/功能.md' }
         ]
       },
       // 单页链接 - 服务中心
@@ -150,38 +100,6 @@ export default defineConfig({
         }
       ],
       /**
-       * 研发合作侧边栏
-       * 当访问 /rd/ 路径下的页面时显示此侧边栏
-       */
-      '/rd/': [
-        {
-          text: '研发合作',
-          items: [
-            { text: '共性关键技术', link: '/rd/key-technologies' },
-            { text: '技术服务', link: '/rd/tech-services' },
-            { text: '省企业重点实验室', link: '/rd/key-laboratory' },
-            { text: '产学研合作', link: '/rd/industry-university-research' },
-            { text: '驻站研发', link: '/rd/on-site-rd' }
-          ]
-        }
-      ],
-      /**
-       * 成果转化侧边栏
-       * 当访问 /achievements/ 路径下的页面时显示此侧边栏
-       */
-      '/achievements/': [
-        {
-          text: '成果转化',
-          items: [
-            { text: '技术推广', link: '/achievements/tech-promotion' },
-            { text: '专利授权', link: '/achievements/patents' },
-            { text: '联合制造', link: '/achievements/joint-manufacturing' },
-            { text: '产业孵化', link: '/achievements/incubation' },
-            { text: '标准制定', link: '/achievements/standards' }
-          ]
-        }
-      ],
-      /**
        * 创新动态侧边栏
        * 当访问 /news/ 路径下的页面时显示此侧边栏
        */
@@ -208,6 +126,90 @@ export default defineConfig({
             { text: '联盟成员', link: '/alliance/members' },
             { text: '联盟动态', link: '/alliance/news' },
             { text: '湾区资讯', link: '/alliance/bay-area-info' }
+          ]
+        }
+      ],
+      /**
+       * PC课程侧边栏
+       * 当访问 /courses/pc-basics/ 路径下的页面时显示此侧边栏
+       */
+      '/courses/pc-basics/': [
+        {
+          text: 'PC硬件与软件课程',
+          items: [
+            { text: '课程概述', link: '/courses/pc-basics/' },
+            { 
+              text: '硬件基础', 
+              collapsed: false,
+              items: [
+                { text: '概述', link: '/courses/pc-basics/hardware/' },
+                { text: '计算机组成原理概述', link: '/courses/pc-basics/hardware/overview' },
+                { text: 'CPU架构与工作原理', link: '/courses/pc-basics/hardware/cpu' },
+                { text: '内存类型与工作机制', link: '/courses/pc-basics/hardware/memory' },
+                { text: '存储设备', link: '/courses/pc-basics/hardware/storage' },
+                { text: '主板与总线技术', link: '/courses/pc-basics/hardware/motherboard' },
+                { text: '显卡与图形处理', link: '/courses/pc-basics/hardware/gpu' },
+                { text: '输入输出设备', link: '/courses/pc-basics/hardware/io-devices' }
+              ]
+            },
+            { 
+              text: 'PC组装与维护', 
+              collapsed: true,
+              link: '/courses/pc-basics/assembly/'
+            },
+            { 
+              text: '操作系统', 
+              collapsed: true,
+              link: '/courses/pc-basics/os/'
+            },
+            { 
+              text: '常用软件应用', 
+              collapsed: true,
+              link: '/courses/pc-basics/software/'
+            }
+          ]
+        }
+      ],
+      /**
+       * 网络课程侧边栏
+       * 当访问 /courses/network/ 路径下的页面时显示此侧边栏
+       */
+      '/courses/network/': [
+        {
+          text: '网络原理课程',
+          items: [
+            { text: '课程概述', link: '/courses/network/' },
+            { 
+              text: '网络基础知识', 
+              collapsed: false,
+              items: [
+                { text: '概述', link: '/courses/network/basics/' },
+                { text: '网络发展简史', link: '/courses/network/basics/history' },
+                { text: '网络模型与协议族', link: '/courses/network/basics/models' },
+                { text: 'IP地址与域名系统', link: '/courses/network/basics/ip-dns' },
+                { text: '网络设备与功能', link: '/courses/network/basics/devices' }
+              ]
+            },
+            { 
+              text: '网络连接过程详解', 
+              collapsed: true,
+              link: '/courses/network/connection/'
+            },
+            { 
+              text: 'TCP/IP协议详解', 
+              collapsed: true,
+              link: '/courses/network/protocols/'
+            },
+            { 
+              text: '网络安全基础', 
+              collapsed: true,
+              link: '/courses/network/security/'
+            },
+            { 
+              text: '现代网络应用', 
+              collapsed: true,
+              link: '/courses/network/applications/'
+            }
           ]
         }
       ]

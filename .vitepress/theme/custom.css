@@ -28,38 +28,31 @@
 
 /**
  * 英雄区域背景样式
- * 为首页顶部区域添加背景图片和渐变效果
+ * 为首页顶部区域添加分割式背景效果：左侧2/3为白色，右侧1/3为白色到深蓝的渐变
  * 确保不会覆盖顶部导航栏
  */
 .VPHero {
   position: relative;
-  background-color: var(--vp-c-brand); /* 默认背景色，图片加载失败时显示 */
-  overflow: hidden; /* 防止背景图片溢出容器 */
+  background: linear-gradient(90deg, 
+    #ffffff 66.67%, /* 左侧2/3为纯白色 */
+    #ffffff 66.67%, /* 右侧1/3的起始颜色为白色 */
+    var(--vp-c-brand-darker) 100% /* 右侧1/3的结束颜色为深蓝色 */
+  ); 
+  overflow: hidden; /* 防止背景溢出容器 */
   margin-top: 0; /* 确保不会与导航栏重叠 */
   padding-top: 20px; /* 增加顶部内边距，为导航栏留出空间 */
 }
 
 /**
- * 英雄区域背景图片
- * 添加半透明覆盖层，确保文字清晰可见
+ * 移除原有的英雄区域背景图片覆盖效果
  */
 .VPHero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/images/banner.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.4; /* 降低背景图片透明度，使内容更清晰 */
-  z-index: 0; /* 确保背景在内容之下 */
+  content: none; /* 移除原有的背景图片 */
 }
 
 /**
  * 英雄区域内容容器
- * 确保内容在背景图之上
+ * 确保内容在背景之上
  */
 .VPHero .container {
   position: relative;
@@ -70,10 +63,16 @@
  * 英雄区域标题样式
  * 加粗首页顶部区域的标题和副标题，增强视觉层次感
  */
-.VPHero .name,
+.VPHero .name {
+  font-weight: bold !important; /* 加粗文字 */
+  font-size: 3rem !important; /* 设置字体大小 */
+  color: #020e09 !important; /* 深色文字 */
+  text-shadow: none !important; /* 移除文字阴影，避免干扰颜色显示 */
+}
+
 .VPHero .text {
   font-weight: bold; /* 加粗文字，增强标题的视觉重要性 */
-  color: #ffffff; /* 白色文字，在深色背景上更清晰 */
+  color: #060202; /* 白色文字，在深色背景上更清晰 */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字阴影，提高可读性 */
 }
 

@@ -1,347 +1,237 @@
 ---
 layout: home
+
 hero:
-  name: 机器人创新中心
-  text: 广东省机器人创新中心
-  tagline: 打造机器人产业技术创新平台和服务平台
+  name: 计算机教学资源平台
+  text: 系统化学习计算机基础知识
+  tagline: PC硬件与软件 | 网络原理 | 实例教学
+  image:
+    src: /images/hero-image.png
+    alt: 计算机教学资源平台
   actions:
     - theme: brand
-      text: 了解更多
-      link: /about/introduction
+      text: 开始学习
+      link: /courses/pc-basics/
     - theme: alt
-      text: 产品系统
-      link: /products/robdts
+      text: 查看课程规划
+      link: /功能.md
+
 features:
-  - icon: 🏢
-    title: 中心概况
-    details: 了解中心的基本情况、使命和愿景
-    link: /about/introduction
-  - icon: 🤖
-    title: 产品系统
-    details: 探索我们的软件和系统解决方案
-    link: /products/robdts
-  - icon: 🔬
-    title: 研发合作
-    details: 共性关键技术与技术服务
-    link: /rd/key-technologies
-  - icon: 🏆
-    title: 成果转化
-    details: 技术推广与应用
-    link: /achievements/tech-promotion
+  - icon: 🖥️
+    title: PC硬件与软件课程
+    details: 全面了解计算机硬件组成、工作原理以及常用软件应用，从零开始掌握计算机基础知识。
+    link: /courses/pc-basics/
+  - icon: 🌐
+    title: 网络原理课程
+    details: 基于《网络是怎样连接的》，系统讲解网络通信原理，理解现代网络运作机制。
+    link: /courses/network/
 ---
 
 <div class="home-content">
 
-## 中心简介
+## 为什么选择我们的课程？
 
-广东省机器人创新中心致力于打造机器人产业技术创新平台和服务平台，以科技创新驱动机器人产业发展。我们整合产学研资源，推动机器人技术在各行业的应用与发展。
-
-<!-- 简化轮播图实现 -->
-<div class="simple-slider">
-  <div class="slider-content slider-content-1">
-    <h3>机器人创新技术</h3>
-    <p>推动机器人技术在各行业的应用与发展</p>
+<div class="features-grid">
+  <div class="feature-card">
+    <div class="feature-icon">📚</div>
+    <h3>系统化学习路径</h3>
+    <p>精心设计的课程体系，从基础到进阶，循序渐进地构建完整知识体系</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🔍</div>
+    <h3>深入浅出的讲解</h3>
+    <p>复杂概念简单化，理论结合实践，让抽象知识变得具体可理解</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🛠️</div>
+    <h3>实践驱动学习</h3>
+    <p>大量动手实践环节，巩固理论知识，培养实际操作能力</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🔄</div>
+    <h3>与时俱进的内容</h3>
+    <p>定期更新课程内容，反映技术发展趋势和行业最新变化</p>
   </div>
 </div>
 
-## 创新动态
+## 热门课程章节
 
-<div class="news-grid">
-  <div class="news-card">
-    <h3>机器人离线编程与数字孪生中控系统推广会成功举办</h3>
-    <p>2023年12月15日，机器人创新中心联合上海赛威德机器人有限公司成功举办产品推广会...</p>
-    <div class="news-meta">
-      <span class="news-date">2023-12-18</span>
-      <a class="news-link" href="/news/center-news">阅读更多</a>
-    </div>
+<div class="popular-courses">
+  <a href="/courses/pc-basics/hardware/overview.html" class="course-card">
+    <h3>计算机组成原理概述</h3>
+    <p>揭开计算机系统的神秘面纱，了解冯·诺依曼架构与现代计算机工作原理</p>
+    <span class="course-card-tag">PC基础</span>
+  </a>
+  <a href="/courses/network/basics/models.html" class="course-card">
+    <h3>网络模型与协议族</h3>
+    <p>理解OSI七层模型和TCP/IP四层模型，掌握网络通信的基础框架</p>
+    <span class="course-card-tag">网络原理</span>
+  </a>
+  <a href="/courses/pc-basics/assembly/" class="course-card">
+    <h3>PC组装与维护</h3>
+    <p>从零开始学习电脑组装，掌握硬件选购、兼容性分析和故障排查技巧</p>
+    <span class="course-card-tag">PC基础</span>
+  </a>
+  <a href="/courses/network/connection/" class="course-card">
+    <h3>网络连接过程详解</h3>
+    <p>探索数据包的旅程，了解从输入URL到网页显示的全过程</p>
+    <span class="course-card-tag">网络原理</span>
+  </a>
+</div>
+
+## 学习路径推荐
+
+<div class="learning-paths">
+  <div class="path-card">
+    <h3>计算机入门者</h3>
+    <ol>
+      <li><a href="/courses/pc-basics/hardware/">计算机硬件基础</a></li>
+      <li><a href="/courses/pc-basics/os/">操作系统基础</a></li>
+      <li><a href="/courses/pc-basics/software/">常用软件应用</a></li>
+      <li><a href="/courses/network/basics/">网络基础知识</a></li>
+    </ol>
   </div>
-  
-  <div class="news-card">
-    <h3>2023年广东省专精特新企业政策宣讲会成功举办</h3>
-    <p>6月26日，以"赋智 赋值 赋能"为主题的政策宣讲会在智造谷创新园成功举办...</p>
-    <div class="news-meta">
-      <span class="news-date">2023-07-24</span>
-      <a class="news-link" href="/news/center-news">阅读更多</a>
-    </div>
-  </div>
-  
-  <div class="news-card">
-    <h3>智能锁自动化柔性定位测试系统成功研发</h3>
-    <p>广东省机器人创新中心自主研发出智能锁自动化柔性定位测试系统，实现了全自动化测试...</p>
-    <div class="news-meta">
-      <span class="news-date">2022-11-25</span>
-      <a class="news-link" href="/news/center-news">阅读更多</a>
-    </div>
+  <div class="path-card">
+    <h3>IT从业人员</h3>
+    <ol>
+      <li><a href="/courses/network/basics/models.html">网络模型与协议族</a></li>
+      <li><a href="/courses/network/protocols/">TCP/IP协议详解</a></li>
+      <li><a href="/courses/network/security/">网络安全基础</a></li>
+      <li><a href="/courses/pc-basics/assembly/">PC组装与故障诊断</a></li>
+    </ol>
   </div>
 </div>
 
-<div class="view-more">
-  <a href="/news/center-news">查看更多动态</a>
-</div>
+## 最新课程动态
 
-## 创新联盟
-
-当前，智能机器人是衡量科技创新和制造业发展水平的重要标志之一，是智能制造的关键抓手和技术支撑。机器人产业的发展直接关系到智能制造水平的提升以及制造强国和高质量发展战略的实施成效。
-
-<div class="alliance-action">
-  <a href="/alliance/introduction">加入创新联盟</a>
+<div class="news-section">
+  <div class="news-card">
+    <span class="date">2023年7月1日</span>
+    <h3>网络课程全面更新</h3>
+    <p>新增5G网络和云计算相关内容，反映当前网络技术最新发展趋势</p>
+    <a href="/courses/network/applications/">查看详情 →</a>
+  </div>
+  <div class="news-card">
+    <span class="date">2023年6月15日</span>
+    <h3>PC硬件课程增加实操视频</h3>
+    <p>硬件组装章节新增高清视频教程，提供更直观的学习体验</p>
+    <a href="/courses/pc-basics/assembly/">查看详情 →</a>
+  </div>
 </div>
 
 </div>
 
 <style>
-/**
- * 首页内容区域样式
- * 为首页内容设置最大宽度和边距，使内容居中显示
- */
 .home-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-/**
- * 首页标题样式
- * 为首页各部分标题设置样式，包括字体大小、颜色和边距
- */
-.home-content h2 {
-  font-size: 1.8rem;
-  color: var(--vp-c-brand);
-  margin: 3rem 0 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #eaecef;
-}
-
-/**
- * 简化轮播图样式
- * 使用一个更简单的结构实现视觉效果
- */
-.simple-slider {
-  height: 300px;
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
   margin: 2rem 0;
+}
+
+.feature-card {
+  background-color: #f8f9fa;
   border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: relative;
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.slider-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 8px;
-  position: relative;
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
-.slider-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 0;
-}
-
-.slider-content h3, .slider-content p {
-  position: relative;
-  z-index: 1;
-}
-
-.slider-content h3 {
+.feature-icon {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.slider-content p {
-  font-size: 1.2rem;
-}
-
-.slider-content-1 {
-  background: linear-gradient(135deg, #0066cc, #004080);
-}
-
-/**
- * 新闻网格布局
- * 使用CSS网格创建响应式新闻卡片布局
- */
-.news-grid {
+.popular-courses {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-/**
- * 新闻卡片样式
- * 设置新闻卡片的边框、圆角、阴影和过渡效果
- */
-.news-card {
-  border: 1px solid #eaecef;
-  border-radius: 8px;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-/**
- * 新闻卡片悬停效果
- * 当鼠标悬停在卡片上时添加提升和阴影效果
- */
-.news-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-/**
- * 新闻卡片标题样式
- * 设置新闻标题的字体大小和下边距
- */
-.news-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.8rem;
-}
-
-/**
- * 新闻元数据区域样式
- * 设置包含日期和链接的容器的样式
- */
-.news-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-/**
- * 新闻日期样式
- * 设置日期文字的颜色和大小
- */
-.news-date {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-/**
- * 新闻链接样式
- * 设置"阅读更多"链接的颜色和过渡效果
- */
-.news-link {
-  color: var(--vp-c-brand);
-  transition: color 0.2s;
-}
-
-/**
- * 新闻链接悬停效果
- * 当鼠标悬停在链接上时改变颜色
- */
-.news-link:hover {
-  color: var(--vp-c-brand-dark);
-}
-
-/**
- * 查看更多按钮容器样式
- * 设置查看更多按钮的对齐方式和边距
- */
-.view-more {
-  text-align: center;
   margin: 2rem 0;
 }
 
-/**
- * 查看更多按钮样式
- * 设置按钮的背景色、文字颜色、内边距和圆角
- */
-.view-more a {
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
+.course-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.course-card-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   background-color: var(--vp-c-brand);
   color: white;
+  padding: 0.2rem 0.6rem;
   border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.3s;
+  font-size: 0.8rem;
 }
 
-/**
- * 查看更多按钮悬停效果
- * 当鼠标悬停在按钮上时改变背景色
- */
-.view-more a:hover {
-  background-color: var(--vp-c-brand-dark);
+.learning-paths {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
-/**
- * 联盟行动区域样式
- * 设置联盟介绍下方操作按钮的对齐方式和边距
- */
-.alliance-action {
-  text-align: center;
-  margin: 1.5rem 0;
+.path-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
 }
 
-/**
- * 联盟行动按钮样式
- * 设置联盟相关按钮的样式，与查看更多按钮保持一致
- */
-.alliance-action a {
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  background-color: var(--vp-c-brand);
-  color: white;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.3s;
+.path-card ol {
+  padding-left: 1.2rem;
 }
 
-/**
- * 联盟行动按钮悬停效果
- * 当鼠标悬停在按钮上时改变背景色
- */
-.alliance-action a:hover {
-  background-color: var(--vp-c-brand-dark);
+.path-card li {
+  margin-bottom: 0.5rem;
 }
 
-/**
- * 全局背景样式
- * 为页面添加淡色背景
- */
-:root {
-  --vp-background: #f8f9fa;
+.news-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
 
-.VPContent {
-  background-color: var(--vp-background);
+.news-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.5rem;
 }
 
-/**
- * 响应式适配 - 移动设备
- * 在小屏幕设备上调整样式以提供更好的用户体验
- */
-@media (max-width: 768px) {
-  .news-grid {
+.date {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+@media (max-width: 640px) {
+  .features-grid,
+  .popular-courses,
+  .learning-paths,
+  .news-section {
     grid-template-columns: 1fr;
-  }
-  
-  .home-content h2 {
-    font-size: 1.5rem;
-  }
-  
-  .simple-slider {
-    height: 250px;
-  }
-  
-  .slider-content h3 {
-    font-size: 1.6rem;
-  }
-  
-  .slider-content p {
-    font-size: 1rem;
   }
 }
 </style>

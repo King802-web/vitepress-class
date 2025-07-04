@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>浏览器渲染过程示意图</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .diagram-container {
+            width: 800px;
+            height: 500px;
+            background-color: white;
+            border: 1px solid #ddd;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 400px;
+        }
+        .step-row {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .step-box {
+            width: 150px;
+            height: 100px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #0066cc;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .step-desc {
+            font-size: 12px;
+            color: #555;
+        }
+        .html-box {
+            background-color: #fff8e1;
+            border-color: #ffd54f;
+        }
+        .css-box {
+            background-color: #e3f2fd;
+            border-color: #64b5f6;
+        }
+        .js-box {
+            background-color: #e8f5e9;
+            border-color: #66bb6a;
+        }
+        .dom-box {
+            background-color: #ffebee;
+            border-color: #ef5350;
+        }
+        .cssom-box {
+            background-color: #e8eaf6;
+            border-color: #7986cb;
+        }
+        .render-box {
+            background-color: #f3e5f5;
+            border-color: #ab47bc;
+        }
+        .layout-box {
+            background-color: #ede7f6;
+            border-color: #7e57c2;
+        }
+        .paint-box {
+            background-color: #e0f2f1;
+            border-color: #26a69a;
+        }
+        .arrow {
+            position: absolute;
+            width: 0;
+            height: 40px;
+            border-left: 2px dashed #666;
+        }
+        .arrow::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -5px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 5px 8px 5px;
+            border-color: transparent transparent #666 transparent;
+        }
+        .arrow-1 {
+            top: 120px;
+            left: 160px;
+        }
+        .arrow-2 {
+            top: 120px;
+            left: 400px;
+        }
+        .arrow-3 {
+            top: 120px;
+            left: 640px;
+        }
+        .arrow-4 {
+            top: 250px;
+            left: 160px;
+        }
+        .arrow-5 {
+            top: 250px;
+            left: 400px;
+        }
+        .arrow-6 {
+            top: 250px;
+            left: 640px;
+        }
+        .arrow-7 {
+            top: 380px;
+            left: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="diagram-container">
+        <div class="title">浏览器渲染过程</div>
+        
+        <div class="step-container">
+            <!-- 第一行 -->
+            <div class="step-row">
+                <div class="step-box html-box">
+                    <div class="step-number">1</div>
+                    <div class="step-title">解析HTML</div>
+                    <div class="step-desc">将HTML字符串解析为DOM树</div>
+                </div>
+                <div class="step-box css-box">
+                    <div class="step-number">2</div>
+                    <div class="step-title">解析CSS</div>
+                    <div class="step-desc">将CSS解析为CSSOM树</div>
+                </div>
+                <div class="step-box js-box">
+                    <div class="step-number">3</div>
+                    <div class="step-title">执行JavaScript</div>
+                    <div class="step-desc">执行脚本，可能修改DOM或CSSOM</div>
+                </div>
+            </div>
+            
+            <!-- 第一行到第二行的箭头 -->
+            <div class="arrow arrow-1"></div>
+            <div class="arrow arrow-2"></div>
+            <div class="arrow arrow-3"></div>
+            
+            <!-- 第二行 -->
+            <div class="step-row">
+                <div class="step-box dom-box">
+                    <div class="step-number">4</div>
+                    <div class="step-title">构建DOM树</div>
+                    <div class="step-desc">完成的文档对象模型</div>
+                </div>
+                <div class="step-box cssom-box">
+                    <div class="step-number">5</div>
+                    <div class="step-title">构建CSSOM树</div>
+                    <div class="step-desc">完成的CSS对象模型</div>
+                </div>
+                <div class="step-box render-box">
+                    <div class="step-number">6</div>
+                    <div class="step-title">构建渲染树</div>
+                    <div class="step-desc">结合DOM和CSSOM</div>
+                </div>
+            </div>
+            
+            <!-- 第二行到第三行的箭头 -->
+            <div class="arrow arrow-4"></div>
+            <div class="arrow arrow-5"></div>
+            <div class="arrow arrow-6"></div>
+            
+            <!-- 第三行 -->
+            <div class="step-row">
+                <div class="step-box layout-box">
+                    <div class="step-number">7</div>
+                    <div class="step-title">布局</div>
+                    <div class="step-desc">计算元素的位置和大小</div>
+                </div>
+                <div class="step-box paint-box">
+                    <div class="step-number">8</div>
+                    <div class="step-title">绘制</div>
+                    <div class="step-desc">将元素渲染为实际像素</div>
+                </div>
+            </div>
+            
+            <!-- 第三行到第四行的箭头 -->
+            <div class="arrow arrow-7"></div>
+        </div>
+    </div>
+    <p>注意：这是一个临时的HTML文件，用于生成浏览器渲染过程图像。请将此页面截图并保存为PNG文件，或替换为专业设计的图像。</p>
+</body>
+</html> 

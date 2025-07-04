@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hero Image Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .hero-image-container {
+            width: 800px;
+            height: 400px;
+            background: linear-gradient(135deg, #0066cc, #004080);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        .grid-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: 1;
+        }
+        .decorative-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+        .circle-1 {
+            width: 150px;
+            height: 150px;
+            top: -50px;
+            left: -50px;
+        }
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -70px;
+            right: -70px;
+        }
+        .square {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            transform: rotate(45deg);
+            background: rgba(255,255,255,0.07);
+        }
+        .square-1 {
+            top: 50px;
+            right: 100px;
+        }
+        .square-2 {
+            bottom: 80px;
+            left: 120px;
+        }
+        .computer-icon, .network-icon {
+            font-size: 80px;
+            position: absolute;
+        }
+        .computer-icon {
+            left: 100px;
+            top: 100px;
+            transform: rotate(-15deg);
+        }
+        .network-icon {
+            right: 100px;
+            bottom: 100px;
+            transform: rotate(15deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-image-container">
+        <div class="grid-bg"></div>
+        <div class="decorative-elements">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="square square-1"></div>
+            <div class="square square-2"></div>
+            <div class="computer-icon">🖥️</div>
+            <div class="network-icon">🌐</div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-title">计算机教学资源平台</div>
+            <div class="hero-subtitle">系统化学习计算机基础知识</div>
+        </div>
+    </div>
+    <p>注意：这是一个临时的HTML文件，用于生成hero图像。请将此页面截图并保存为PNG文件，或者替换为专业设计的图像。</p>
+</body>
+</html> 

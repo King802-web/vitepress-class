@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DNS解析过程示意图</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .diagram-container {
+            width: 800px;
+            height: 500px;
+            background-color: white;
+            border: 1px solid #ddd;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .device {
+            position: absolute;
+            width: 100px;
+            height: 80px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .device-icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .browser {
+            top: 100px;
+            left: 50px;
+            background-color: #f0f8ff;
+            border: 2px solid #add8e6;
+        }
+        .os {
+            top: 100px;
+            left: 200px;
+            background-color: #f0fff0;
+            border: 2px solid #90ee90;
+        }
+        .router {
+            top: 100px;
+            left: 350px;
+            background-color: #fff0f0;
+            border: 2px solid #ffb6c1;
+        }
+        .isp {
+            top: 100px;
+            left: 500px;
+            background-color: #f5f5f5;
+            border: 2px solid #a9a9a9;
+        }
+        .root {
+            top: 250px;
+            left: 500px;
+            background-color: #fffacd;
+            border: 2px solid #daa520;
+        }
+        .tld {
+            top: 350px;
+            left: 500px;
+            background-color: #e6e6fa;
+            border: 2px solid #9370db;
+        }
+        .auth {
+            top: 450px;
+            left: 500px;
+            background-color: #e0ffff;
+            border: 2px solid #00ced1;
+        }
+        .arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        .arrow-text {
+            position: absolute;
+            font-size: 12px;
+            color: #555;
+        }
+        .step {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #0066cc;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .step-1 {
+            top: 90px;
+            left: 160px;
+        }
+        .step-2 {
+            top: 90px;
+            left: 310px;
+        }
+        .step-3 {
+            top: 90px;
+            left: 460px;
+        }
+        .step-4 {
+            top: 190px;
+            left: 530px;
+        }
+        .step-5 {
+            top: 290px;
+            left: 530px;
+        }
+        .step-6 {
+            top: 390px;
+            left: 530px;
+        }
+        .arrow-h {
+            position: absolute;
+            height: 2px;
+            background-color: #666;
+        }
+        .arrow-h::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 0 5px 10px;
+            border-color: transparent transparent transparent #666;
+        }
+        .arrow-v {
+            position: absolute;
+            width: 2px;
+            background-color: #666;
+        }
+        .arrow-v::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -4px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 5px 10px 5px;
+            border-color: transparent transparent #666 transparent;
+        }
+        .arrow-1 {
+            width: 40px;
+            top: 140px;
+            left: 150px;
+        }
+        .arrow-2 {
+            width: 40px;
+            top: 140px;
+            left: 300px;
+        }
+        .arrow-3 {
+            width: 40px;
+            top: 140px;
+            left: 450px;
+        }
+        .arrow-4 {
+            height: 40px;
+            top: 200px;
+            left: 550px;
+        }
+        .arrow-5 {
+            height: 40px;
+            top: 300px;
+            left: 550px;
+        }
+        .arrow-6 {
+            height: 40px;
+            top: 400px;
+            left: 550px;
+        }
+        .note {
+            position: absolute;
+            font-size: 12px;
+            color: #666;
+            max-width: 150px;
+            text-align: left;
+        }
+        .note-1 {
+            top: 180px;
+            left: 50px;
+        }
+        .note-2 {
+            top: 180px;
+            left: 200px;
+        }
+        .note-3 {
+            top: 180px;
+            left: 350px;
+        }
+        .note-4 {
+            top: 120px;
+            left: 620px;
+        }
+        .note-5 {
+            top: 270px;
+            left: 620px;
+        }
+        .note-6 {
+            top: 370px;
+            left: 620px;
+        }
+        .note-7 {
+            top: 470px;
+            left: 620px;
+        }
+    </style>
+</head>
+<body>
+    <div class="diagram-container">
+        <div class="title">DNS解析过程</div>
+        
+        <!-- 设备和服务器 -->
+        <div class="device browser">
+            <div class="device-icon">🌐</div>
+            <div>浏览器缓存</div>
+        </div>
+        <div class="device os">
+            <div class="device-icon">💻</div>
+            <div>操作系统缓存</div>
+        </div>
+        <div class="device router">
+            <div class="device-icon">📡</div>
+            <div>路由器缓存</div>
+        </div>
+        <div class="device isp">
+            <div class="device-icon">🏢</div>
+            <div>ISP DNS服务器</div>
+        </div>
+        <div class="device root">
+            <div class="device-icon">🌍</div>
+            <div>根DNS服务器</div>
+        </div>
+        <div class="device tld">
+            <div class="device-icon">🔝</div>
+            <div>顶级域名服务器</div>
+        </div>
+        <div class="device auth">
+            <div class="device-icon">🔒</div>
+            <div>权威DNS服务器</div>
+        </div>
+        
+        <!-- 步骤标记 -->
+        <div class="step step-1">1</div>
+        <div class="step step-2">2</div>
+        <div class="step step-3">3</div>
+        <div class="step step-4">4</div>
+        <div class="step step-5">5</div>
+        <div class="step step-6">6</div>
+        
+        <!-- 连接箭头 -->
+        <div class="arrow-h arrow-1"></div>
+        <div class="arrow-h arrow-2"></div>
+        <div class="arrow-h arrow-3"></div>
+        <div class="arrow-v arrow-4"></div>
+        <div class="arrow-v arrow-5"></div>
+        <div class="arrow-v arrow-6"></div>
+        
+        <!-- 说明注释 -->
+        <div class="note note-1">检查浏览器内部DNS缓存</div>
+        <div class="note note-2">检查操作系统DNS缓存</div>
+        <div class="note note-3">检查路由器DNS缓存</div>
+        <div class="note note-4">ISP的递归DNS服务器</div>
+        <div class="note note-5">查询根域名服务器</div>
+        <div class="note note-6">查询.com顶级域名服务器</div>
+        <div class="note note-7">查询example.com权威DNS服务器</div>
+    </div>
+    <p>注意：这是一个临时的HTML文件，用于生成DNS解析过程图像。请将此页面截图并保存为PNG文件，或替换为专业设计的图像。</p>
+</body>
+</html> 
