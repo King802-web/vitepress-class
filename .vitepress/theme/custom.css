@@ -1,0 +1,281 @@
+/**
+ * 自定义CSS样式文件
+ * 用于覆盖默认主题样式并添加自定义样式
+ */
+
+/* ===== 颜色变量定义 ===== */
+/**
+ * 全局CSS变量定义
+ * 定义网站的品牌颜色系统，这些变量会覆盖VitePress默认主题的颜色变量
+ * 这些变量可以在其他CSS规则中通过var()函数引用
+ */
+:root {
+  --vp-c-brand: #0066cc;         /* 主品牌色 - 用于主要按钮、链接和强调元素 */
+  --vp-c-brand-light: #0077e6;   /* 品牌色-亮 - 用于悬停状态 */
+  --vp-c-brand-lighter: #3399ff; /* 品牌色-更亮 - 用于活动状态或背景 */
+  --vp-c-brand-dark: #004d99;    /* 品牌色-暗 - 用于边框或次要元素 */
+  --vp-c-brand-darker: #003366;  /* 品牌色-更暗 - 用于文本或阴影 */
+}
+
+/* ===== 首页样式 ===== */
+/**
+ * 首页容器样式
+ * 移除默认的底部内边距，便于添加自定义内容区域
+ */
+.VPHome {
+  padding-bottom: 0; /* 移除底部内边距，使页面内容可以延伸到底部 */
+}
+
+/**
+ * 英雄区域标题样式
+ * 加粗首页顶部区域的标题和副标题，增强视觉层次感
+ */
+.VPHero .name,
+.VPHero .text {
+  font-weight: bold; /* 加粗文字，增强标题的视觉重要性 */
+}
+
+/**
+ * 特性卡片样式
+ * 为特性卡片添加过渡效果，提升交互体验
+ */
+.VPFeature {
+  transition: all 0.3s ease; /* 添加平滑过渡效果，适用于所有可变属性 */
+}
+
+/**
+ * 特性卡片悬停效果
+ * 当用户将鼠标悬停在特性卡片上时，添加视觉反馈
+ */
+.VPFeature:hover {
+  transform: translateY(-5px); /* 上移效果，创造轻微的浮动感 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* 阴影效果，增强立体感 */
+}
+
+/* ===== 导航栏和侧边栏样式 ===== */
+/**
+ * 导航栏样式
+ * 添加底部边框，增强导航区域的视觉分隔效果
+ */
+.VPNav {
+  border-bottom: 1px solid rgba(60, 60, 60, 0.12); /* 半透明底部边框，柔和分隔效果 */
+}
+
+/**
+ * 侧边栏样式
+ * 设置浅灰色背景，与主内容区域形成对比
+ */
+.VPSidebar {
+  background-color: #f9f9f9; /* 浅灰色背景，提供柔和的视觉区分 */
+}
+
+/* ===== 内容区域样式 ===== */
+/**
+ * 页面内容样式
+ * 设置合适的行高，提升长文本的可读性
+ */
+.VPContent {
+  line-height: 1.7; /* 行高设置为1.7倍，提高文本可读性 */
+}
+
+/**
+ * 一级标题样式
+ * 设置字体大小、边距和底部边框，增强页面层次结构
+ */
+.VPContent h1 {
+  font-size: 2.2rem; /* 大号字体 */
+  margin-bottom: 1.5rem; /* 底部外边距 */
+  border-bottom: 1px solid #eaecef; /* 底部边框，视觉分隔效果 */
+  padding-bottom: 0.5rem; /* 底部内边距，使边框与文字有适当间距 */
+}
+
+/**
+ * 二级标题样式
+ * 设置字体大小、边距和底部边框，形成明确的标题层级
+ */
+.VPContent h2 {
+  font-size: 1.8rem; /* 中号字体 */
+  margin: 2rem 0 1rem; /* 上下外边距 */
+  padding-bottom: 0.3rem; /* 底部内边距 */
+  border-bottom: 1px solid #eaecef; /* 底部边框，视觉分隔效果 */
+}
+
+/**
+ * 三级标题样式
+ * 设置合适的字体大小和边距
+ */
+.VPContent h3 {
+  font-size: 1.5rem; /* 小号标题字体 */
+  margin: 1.5rem 0 1rem; /* 上下外边距 */
+}
+
+/**
+ * 段落样式
+ * 设置段落间距
+ */
+.VPContent p {
+  margin: 1rem 0; /* 上下外边距 */
+}
+
+/**
+ * 列表样式
+ * 设置列表的缩进和间距
+ */
+.VPContent ul, .VPContent ol {
+  padding-left: 1.5rem; /* 左侧内边距，缩进效果 */
+  margin: 1rem 0; /* 上下外边距 */
+}
+
+/**
+ * 列表项样式
+ * 设置列表项的间距
+ */
+.VPContent li {
+  margin: 0.5rem 0; /* 上下外边距 */
+}
+
+/* ===== 自定义新闻组件样式 ===== */
+/**
+ * 新闻列表容器样式
+ * 使用CSS Grid布局创建响应式新闻列表
+ */
+.news-container {
+  display: grid; /* 使用Grid布局 */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 响应式网格布局：
+                                                                  * - auto-fill：自动填充列数
+                                                                  * - minmax(300px, 1fr)：每列最小300px，最大1fr（等分剩余空间）
+                                                                  */
+  gap: 1.5rem; /* 网格间距 */
+  margin: 1.5rem 0; /* 上下外边距 */
+}
+
+/**
+ * 新闻项样式
+ * 设置新闻卡片的外观和过渡效果
+ */
+.news-item {
+  border: 1px solid #eaecef; /* 边框 */
+  border-radius: 8px; /* 圆角 */
+  padding: 1.5rem; /* 内边距 */
+  transition: all 0.3s ease; /* 平滑过渡效果 */
+}
+
+/**
+ * 新闻项悬停效果
+ * 添加视觉反馈，增强交互体验
+ */
+.news-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+  transform: translateY(-3px); /* 上移效果 */
+}
+
+/**
+ * 新闻日期样式
+ * 使用浅灰色和小字体区分日期信息
+ */
+.news-date {
+  color: #666; /* 灰色文本 */
+  font-size: 0.9rem; /* 小号字体 */
+}
+
+/* ===== 响应式设计 ===== */
+/**
+ * 响应式调整 - 移动设备
+ * 当屏幕宽度小于768px时应用这些样式
+ */
+@media (max-width: 768px) {
+  /**
+   * 在小屏幕上新闻列表改为单列
+   * 优化移动设备的布局
+   */
+  .news-container {
+    grid-template-columns: 1fr; /* 单列布局 */
+  }
+  
+  /**
+   * 调整英雄区域标题大小
+   * 在小屏幕上减小标题字体大小
+   */
+  .VPHero .name {
+    font-size: 2rem !important; /* 强制覆盖默认样式 */
+  }
+  
+  /**
+   * 调整英雄区域副标题大小
+   * 在小屏幕上减小副标题字体大小
+   */
+  .VPHero .text {
+    font-size: 1.5rem !important; /* 强制覆盖默认样式 */
+  }
+}
+
+/* ===== 页脚样式 ===== */
+/**
+ * 页脚样式
+ * 设置页脚的外观，添加上边框和背景色
+ */
+.VPFooter {
+  border-top: 1px solid #eaecef; /* 顶部边框，视觉分隔效果 */
+  padding: 2rem 0; /* 上下内边距 */
+  background-color: #f9f9f9; /* 浅灰色背景 */
+}
+
+/* ===== 自定义UI组件样式 ===== */
+/**
+ * 自定义按钮样式
+ * 创建与品牌风格一致的按钮
+ */
+.custom-button {
+  display: inline-block; /* 行内块级元素 */
+  padding: 0.5rem 1.5rem; /* 内边距 */
+  background-color: var(--vp-c-brand); /* 使用品牌色作为背景 */
+  color: white; /* 白色文本 */
+  border-radius: 4px; /* 圆角 */
+  text-decoration: none; /* 移除下划线 */
+  transition: background-color 0.3s; /* 背景色过渡效果 */
+}
+
+/**
+ * 按钮悬停效果
+ * 当用户将鼠标悬停在按钮上时，改变背景色
+ */
+.custom-button:hover {
+  background-color: var(--vp-c-brand-light); /* 使用亮品牌色 */
+}
+
+/**
+ * 联系表单输入框样式
+ * 统一表单元素的外观
+ */
+.contact-form input,
+.contact-form textarea {
+  width: 100%; /* 全宽 */
+  padding: 0.8rem; /* 内边距 */
+  border: 1px solid #ddd; /* 边框 */
+  border-radius: 4px; /* 圆角 */
+  margin-bottom: 1rem; /* 底部外边距 */
+  font-size: 1rem; /* 字体大小 */
+}
+
+/**
+ * 联系表单按钮样式
+ * 创建与品牌风格一致的提交按钮
+ */
+.contact-form button {
+  background-color: var(--vp-c-brand); /* 使用品牌色作为背景 */
+  color: white; /* 白色文本 */
+  border: none; /* 无边框 */
+  padding: 0.8rem 2rem; /* 内边距 */
+  border-radius: 4px; /* 圆角 */
+  font-size: 1rem; /* 字体大小 */
+  cursor: pointer; /* 鼠标指针样式 */
+  transition: background-color 0.3s; /* 背景色过渡效果 */
+}
+
+/**
+ * 联系表单按钮悬停效果
+ * 当用户将鼠标悬停在按钮上时，改变背景色
+ */
+.contact-form button:hover {
+  background-color: var(--vp-c-brand-light); /* 使用亮品牌色 */
+} 

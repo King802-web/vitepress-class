@@ -1,0 +1,350 @@
+---
+layout: home
+hero:
+  name: 广东省机器人创新中心
+  text: 打造机器人产业技术创新平台和服务平台
+  tagline: 以科技创新驱动机器人产业发展，推进制造业创新中心建设
+  image:
+    src: /banner.jpg
+    alt: 广东省机器人创新中心
+  actions:
+    - theme: brand
+      text: 了解更多
+      link: /about/introduction
+    - theme: alt
+      text: 产品系统
+      link: /products/robdts
+features:
+  - icon: 🏢
+    title: 中心概况
+    details: 由工信部电子第五研究所等十家国内机器人、人工智能与智能制造领域龙头企事业单位共同发起
+    link: /about/introduction
+  - icon: 🤖
+    title: 产品系统
+    details: RobDTS软件、柔性制造系统、智能磨抛工作站、智能制造实训平台、智能焊接工作站等
+    link: /products/robdts
+  - icon: 🔬
+    title: 研发合作
+    details: 共性关键技术、技术服务、省企业重点实验室、产学研合作、驻站研发
+    link: /rd/key-technologies
+  - icon: 🏆
+    title: 成果转化
+    details: 技术推广、专利授权、联合制造、产业孵化、标准制定
+    link: /achievements/tech-promotion
+---
+
+<!-- 轮播图区域 - 纯CSS实现 -->
+<div class="carousel-section">
+  <div class="carousel-container">
+    <div class="carousel">
+      <!-- 轮播项1 -->
+      <div class="carousel-item" id="slide1">
+        <div class="carousel-content" style="background-color: #0066cc;">
+          <div class="carousel-text">
+            <h3>机器人创新技术</h3>
+            <p>推动机器人技术在各行业的应用与发展</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 轮播项2 -->
+      <div class="carousel-item" id="slide2">
+        <div class="carousel-content" style="background-color: #2e8b57;">
+          <div class="carousel-text">
+            <h3>智能制造解决方案</h3>
+            <p>为企业提供全方位的智能制造技术支持</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 轮播项3 -->
+      <div class="carousel-item" id="slide3">
+        <div class="carousel-content" style="background-color: #6a5acd;">
+          <div class="carousel-text">
+            <h3>产学研合作交流</h3>
+            <p>促进产学研用协同创新，加速科技成果转化</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 轮播导航 -->
+      <div class="carousel-navigation">
+        <a href="#slide1" class="nav-dot"></a>
+        <a href="#slide2" class="nav-dot"></a>
+        <a href="#slide3" class="nav-dot"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 新闻动态区域 -->
+<div class="news-section">
+  <h2>创新动态</h2>
+  <div class="news-container">
+    <!-- 新闻项1 -->
+    <div class="news-item">
+      <h3>领航智造·预见未来|机器人离线编程与数字孪生中控系统&智能液控磨抛产品推广会成功举办</h3>
+      <p>2023年12月15日下午，由广东省机器人创新中心有限公司（简称"机器人创新中心"）和上海赛威德机器人有限公司联合主办的"领航智造预见未来|机器人离线编程与数字孪生中控系统&智能液控磨抛产品推广会"成功举办...</p>
+      <span class="news-date">2023-12-18</span>
+      <a href="/news/center-news" class="read-more">阅读更多</a>
+    </div>
+    <!-- 新闻项2 -->
+    <div class="news-item">
+      <h3>活动回顾|"赋智 赋值 赋能"2023年广东省专精特新企业政策宣讲会成功举办</h3>
+      <p>6月26日，由广东省机器人创新中心支持并参与的以"赋智 赋值 赋能"为主题的2023年广东省专精特新企业政策宣讲会在智造谷创新园成功举办...</p>
+      <span class="news-date">2023-07-24</span>
+      <a href="/news/center-news" class="read-more">阅读更多</a>
+    </div>
+    <!-- 新闻项3 -->
+    <div class="news-item">
+      <h3>创新成果|智能锁自动化柔性定位测试系统成功研发</h3>
+      <p>广东省机器人创新中心自主研发出智能锁自动化柔性定位测试系统，实现了智能门锁的全自动化柔性定位测试。</p>
+      <span class="news-date">2022-11-25</span>
+      <a href="/news/center-news" class="read-more">阅读更多</a>
+    </div>
+  </div>
+  <!-- 查看更多按钮 -->
+  <div class="view-more">
+    <a href="/news/center-news">查看更多</a>
+  </div>
+</div>
+
+<!-- 创新联盟区域 -->
+<div class="alliance-section">
+  <h2>创新联盟</h2>
+  <p>当前，智能机器人是衡量科技创新和制造业发展水平的重要标志之一，是智能制造的关键抓手和技术支撑，机器人产业的发展直接关系到智能制造水平的提升以及制造强国和高质量发展战略的实施成效。科技创新驱动是机器人产业发展的主要动力，推进制造业创新中心建设是重要举措。</p>
+  <div class="alliance-action">
+    <a href="/alliance/introduction">查看详情</a>
+  </div>
+</div>
+
+<!-- 自定义样式 -->
+<style>
+/* 新闻区域和联盟区域的共同样式 */
+.news-section, .alliance-section {
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
+/* 新闻列表容器样式 */
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* 新闻项样式 */
+.news-item {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* 新闻标题样式 */
+.news-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* 新闻日期样式 */
+.news-date {
+  display: block;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* 阅读更多链接样式 */
+.read-more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--vp-c-brand);
+}
+
+/* 查看更多按钮容器样式 */
+.view-more {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* 查看更多按钮样式 */
+.view-more a {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--vp-c-brand);
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* 联盟区域段落样式 */
+.alliance-section p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+/* 联盟区域按钮容器样式 */
+.alliance-action {
+  margin-top: 1.5rem;
+}
+
+/* 联盟区域按钮样式 */
+.alliance-action a {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--vp-c-brand);
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* CSS轮播图样式 */
+.carousel-section {
+  margin: 2rem 0;
+}
+
+.carousel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.carousel-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05) 10px,
+    rgba(255, 255, 255, 0.1) 10px,
+    rgba(255, 255, 255, 0.1) 20px
+  );
+}
+
+.carousel-text {
+  text-align: center;
+  z-index: 1;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.carousel-text h3 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem;
+}
+
+.carousel-text p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.carousel-navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.nav-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 6px;
+  transition: background-color 0.3s;
+}
+
+.nav-dot:hover {
+  background-color: white;
+}
+
+/* 自动轮播动画 */
+@keyframes carousel-autoplay {
+  0%, 25% { opacity: 1; }
+  33%, 100% { opacity: 0; }
+}
+
+#slide1 {
+  animation: carousel-autoplay 15s infinite;
+  animation-delay: 0s;
+}
+
+#slide2 {
+  animation: carousel-autoplay 15s infinite;
+  animation-delay: 5s;
+}
+
+#slide3 {
+  animation: carousel-autoplay 15s infinite;
+  animation-delay: 10s;
+}
+
+/* 当哈希值匹配时显示相应的轮播项 */
+.carousel-item:target {
+  opacity: 1;
+  animation: none;
+}
+
+/* 默认显示第一个轮播项 */
+#slide1 {
+  opacity: 1;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .carousel {
+    height: 300px;
+  }
+  
+  .carousel-text h3 {
+    font-size: 1.8rem;
+  }
+  
+  .carousel-text p {
+    font-size: 1rem;
+  }
+}
+</style>

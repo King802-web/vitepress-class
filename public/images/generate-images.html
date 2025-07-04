@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Sample Images</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    canvas {
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    .controls {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>生成示例轮播图片</h1>
+  
+  <div class="controls">
+    <button id="generate">生成示例图片</button>
+    <button id="download">下载图片</button>
+  </div>
+  
+  <div>
+    <h2>图片1：机器人创新技术</h2>
+    <canvas id="canvas1" width="1200" height="400"></canvas>
+  </div>
+  
+  <div>
+    <h2>图片2：智能制造解决方案</h2>
+    <canvas id="canvas2" width="1200" height="400"></canvas>
+  </div>
+  
+  <div>
+    <h2>图片3：产学研合作交流</h2>
+    <canvas id="canvas3" width="1200" height="400"></canvas>
+  </div>
+  
+  <script>
+    const canvas1 = document.getElementById('canvas1');
+    const canvas2 = document.getElementById('canvas2');
+    const canvas3 = document.getElementById('canvas3');
+    const ctx1 = canvas1.getContext('2d');
+    const ctx2 = canvas2.getContext('2d');
+    const ctx3 = canvas3.getContext('2d');
+    
+    // 生成示例图片
+    function generateImages() {
+      // 图片1 - 蓝色背景
+      drawImage(ctx1, '#0066cc', '机器人创新技术');
+      
+      // 图片2 - 绿色背景
+      drawImage(ctx2, '#2e8b57', '智能制造解决方案');
+      
+      // 图片3 - 紫色背景
+      drawImage(ctx3, '#6a5acd', '产学研合作交流');
+    }
+    
+    // 绘制示例图片
+    function drawImage(ctx, color, text) {
+      const width = ctx.canvas.width;
+      const height = ctx.canvas.height;
+      
+      // 绘制渐变背景
+      const gradient = ctx.createLinearGradient(0, 0, width, height);
+      gradient.addColorStop(0, color);
+      gradient.addColorStop(1, '#000');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, width, height);
+      
+      // 绘制网格
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+      ctx.lineWidth = 1;
+      
+      // 水平线
+      for (let y = 50; y < height; y += 50) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(width, y);
+        ctx.stroke();
+      }
+      
+      // 垂直线
+      for (let x = 50; x < width; x += 50) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, height);
+        ctx.stroke();
+      }
+      
+      // 绘制一些圆形
+      for (let i = 0; i < 20; i++) {
+        const x = Math.random() * width;
+        const y = Math.random() * height;
+        const radius = Math.random() * 30 + 10;
+        
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${Math.random() * 0.2})`;
+        ctx.fill();
+      }
+      
+      // 添加文字
+      ctx.fillStyle = 'white';
+      ctx.font = 'bold 48px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(text, width / 2, height / 2);
+      
+      ctx.font = '24px Arial';
+      ctx.fillText('广东省机器人创新中心', width / 2, height / 2 + 60);
+    }
+    
+    // 下载图片
+    function downloadImages() {
+      downloadCanvas(canvas1, 'slide1.jpg');
+      downloadCanvas(canvas2, 'slide2.jpg');
+      downloadCanvas(canvas3, 'slide3.jpg');
+    }
+    
+    function downloadCanvas(canvas, filename) {
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = canvas.toDataURL('image/jpeg', 0.8);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    
+    // 添加事件监听
+    document.getElementById('generate').addEventListener('click', generateImages);
+    document.getElementById('download').addEventListener('click', downloadImages);
+    
+    // 初始生成图片
+    generateImages();
+  </script>
+</body>
+</html> 
