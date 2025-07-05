@@ -158,34 +158,49 @@
 
 <div class="case-studies">
   <div class="case-study">
-    <img src="/images/cases/order-case1.png" alt="连锁快餐点餐系统" />
+    <div class="placeholder-image order-placeholder">
+      <div>
+        <div style="font-size: 32px; margin-bottom: 10px;">🍔</div>
+        <div>连锁快餐点餐系统</div>
+      </div>
+    </div>
     <div class="case-content">
       <h3>连锁快餐点餐系统</h3>
       <p>为某连锁快餐品牌开发的点餐系统，支持多门店管理、线上点餐、外卖配送等功能，提升了30%的运营效率。</p>
-      <a href="/projects/ordering-system#case1" class="view-case">查看详情</a>
+      <a href="/orderapp/" class="view-case">查看详情</a>
     </div>
   </div>
   
   <div class="case-study">
-    <img src="/images/cases/order-case2.png" alt="火锅店点餐系统" />
+    <div class="placeholder-image order-placeholder">
+      <div>
+        <div style="font-size: 32px; margin-bottom: 10px;">🍲</div>
+        <div>火锅店点餐系统</div>
+      </div>
+    </div>
     <div class="case-content">
       <h3>火锅店点餐系统</h3>
       <p>为某特色火锅店定制的点餐系统，支持多人同时点餐、加菜、分账等功能，大幅提升了顾客就餐体验。</p>
-      <a href="/projects/ordering-system#case2" class="view-case">查看详情</a>
+      <a href="/orderapp/" class="view-case">查看详情</a>
     </div>
   </div>
   
   <div class="case-study">
-    <img src="/images/cases/order-case3.png" alt="咖啡厅预订系统" />
+    <div class="placeholder-image order-placeholder">
+      <div>
+        <div style="font-size: 32px; margin-bottom: 10px;">☕</div>
+        <div>咖啡厅预订系统</div>
+      </div>
+    </div>
     <div class="case-content">
       <h3>咖啡厅预订系统</h3>
       <p>为某精品咖啡连锁店开发的预订点餐系统，支持座位预订、提前点餐、会员积分等功能，提升了客户满意度。</p>
-      <a href="/projects/ordering-system#case3" class="view-case">查看详情</a>
+      <a href="/orderapp/" class="view-case">查看详情</a>
     </div>
   </div>
 </div>
 
-## 收费标准
+## 软件标准
 
 我们的点餐系统解决方案提供多种套餐选择，满足不同规模餐饮企业的需求：
 
@@ -193,31 +208,17 @@
 
 - **适合对象**：小型餐饮店、单店经营
 - **核心功能**：基础点餐、订单管理、微信支付
-- **价格**：一次性开发费 + 年服务费
-- **详情咨询**：请联系我们获取详细报价
 
 ### 标准版
 
 - **适合对象**：中型餐饮店、小型连锁
 - **核心功能**：全功能点餐系统、会员管理、营销工具
-- **价格**：一次性开发费 + 年服务费
-- **详情咨询**：请联系我们获取详细报价
 
 ### 企业版
 
 - **适合对象**：大型连锁餐饮企业
 - **核心功能**：全功能点餐系统、多门店管理、数据分析、定制开发
-- **价格**：一次性开发费 + 年服务费
-- **详情咨询**：请联系我们获取详细报价
 
-## 联系我们
-
-如果您对我们的点餐系统解决方案感兴趣，或者有任何疑问，欢迎联系我们：
-
-- **电话**：020-12345678
-- **邮箱**：contact@creativestudio.com
-- **在线咨询**：点击网站右下角的客服图标，与我们的客服人员实时交流
-- **预约演示**：可预约系统演示和功能讲解
 
 <style>
 .case-studies {
@@ -243,6 +244,21 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.order-placeholder {
+  background-color: #e74c3c;
+  background-image: linear-gradient(135deg, #e74c3c, #c0392b);
 }
 
 .case-content {

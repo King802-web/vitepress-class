@@ -54,13 +54,6 @@
 - 某金融APP用户体验优化，用户满意度提升40%
 - 某餐饮小程序界面设计，订单量提升25%
 
-## 联系我们
-
-如果您对我们的UI/UX设计服务感兴趣，欢迎联系我们，我们将为您提供专业的设计解决方案。
-
-<div class="contact-button">
-  <a href="/contact/">立即咨询</a>
-</div>
 
 <style>
 .contact-button {

@@ -7,7 +7,12 @@
 <div class="projects-grid">
   <div class="project-card">
     <div class="project-image">
-      <img src="/images/cases/web-case1.png" alt="企业官网设计" />
+      <div class="placeholder-image web-placeholder">
+        <div>
+          <div style="font-size: 48px; margin-bottom: 15px;">🏢</div>
+          <div style="font-size: 24px; margin-bottom: 10px;">企业官网设计</div>
+        </div>
+      </div>
     </div>
     <h3>企业官网设计</h3>
     <p>为某科技公司设计的现代化响应式企业官网，融合了品牌特色和用户体验优化。</p>
@@ -20,7 +25,12 @@
   
   <div class="project-card">
     <div class="project-image">
-      <img src="/images/project1.png" alt="电子商务平台" />
+      <div class="placeholder-image web-placeholder">
+        <div>
+          <div style="font-size: 48px; margin-bottom: 15px;">🌐</div>
+          <div style="font-size: 24px; margin-bottom: 10px;">电子商务平台</div>
+        </div>
+      </div>
     </div>
     <h3>电子商务平台</h3>
     <p>为某品牌开发的全功能电子商务平台，包含商品展示、购物车、支付和会员系统等功能。</p>
@@ -33,7 +43,12 @@
   
   <div class="project-card">
     <div class="project-image">
-      <img src="/images/project1.png" alt="教育培训网站" />
+      <div class="placeholder-image web-placeholder">
+        <div>
+          <div style="font-size: 48px; margin-bottom: 15px;">🎓</div>
+          <div style="font-size: 24px; margin-bottom: 10px;">教育培训网站</div>
+        </div>
+      </div>
     </div>
     <h3>教育培训网站</h3>
     <p>为某教育机构开发的在线课程平台，支持视频教学、在线测试和学习进度跟踪等功能。</p>
@@ -50,7 +65,12 @@
 <div class="projects-grid">
   <div class="project-card">
     <div class="project-image">
-      <img src="/images/cases/miniprogram-case1.png" alt="会员服务小程序" />
+      <div class="placeholder-image miniprogram-placeholder">
+        <div>
+          <div style="font-size: 48px; margin-bottom: 15px;">👤</div>
+          <div style="font-size: 24px; margin-bottom: 10px;">会员服务小程序</div>
+        </div>
+      </div>
     </div>
     <h3>会员服务小程序</h3>
     <p>为某品牌开发的会员服务与营销活动小程序，实现了会员积分、优惠券和活动报名等功能。</p>
@@ -61,9 +81,34 @@
     </div>
   </div>
   
+  <div class="project-card featured-project">
+    <div class="project-image">
+      <div class="placeholder-image miniprogram-placeholder">
+        <div>
+          <div style="font-size: 48px; margin-bottom: 15px;">🍽️</div>
+          <div style="font-size: 24px; margin-bottom: 10px;">餐饮点餐系统</div>
+        </div>
+      </div>
+    </div>
+    <div class="featured-tag">热门案例</div>
+    <h3>餐饮点餐小程序</h3>
+    <p>开箱即用的餐饮点餐系统，支持堂食点餐、外卖配送、预约订座等多种业务场景。</p>
+    <div class="project-tags">
+      <span>微信小程序</span>
+      <span>餐饮行业</span>
+      <span>扫码点餐</span>
+    </div>
+    <a href="/projects/miniprogram-case" class="view-details-btn">查看详情</a>
+  </div>
+  
   <div class="project-card">
     <div class="project-image">
-      <img src="/images/project2.png" alt="社区服务小程序" />
+      <div class="placeholder-image miniprogram-placeholder">
+        <div>
+          <div style="font-size: 48px; margin-bottom: 15px;">🏠</div>
+          <div style="font-size: 24px; margin-bottom: 10px;">社区服务小程序</div>
+        </div>
+      </div>
     </div>
     <h3>社区服务小程序</h3>
     <p>为某社区开发的便民服务小程序，整合了物业服务、社区活动和邻里互助等功能。</p>
@@ -73,19 +118,6 @@
       <span>位置服务</span>
     </div>
   </div>
-  
-  <div class="project-card">
-    <div class="project-image">
-      <img src="/images/project2.png" alt="健康管理小程序" />
-    </div>
-    <h3>健康管理小程序</h3>
-    <p>为某医疗机构开发的健康管理小程序，提供健康数据记录、在线咨询和预约挂号等服务。</p>
-    <div class="project-tags">
-      <span>微信小程序</span>
-      <span>医疗健康</span>
-      <span>数据可视化</span>
-    </div>
-  </div>
 </div>
 
 ## 点餐系统项目
@@ -93,7 +125,12 @@
 <div class="projects-grid">
   <div class="project-card">
     <div class="project-image">
-      <img src="/images/cases/order-case1.png" alt="连锁餐厅点餐系统" />
+      <div class="placeholder-image order-placeholder">
+        <div>
+          <div style="font-size: 48px; margin-bottom: 15px;">🍔</div>
+          <div style="font-size: 24px; margin-bottom: 10px;">连锁餐厅点餐系统</div>
+        </div>
+      </div>
     </div>
     <h3>连锁餐厅点餐系统</h3>
     <p>为某连锁餐厅开发的多功能点餐与会员管理系统，支持堂食点餐、外卖配送和预订等多种场景。</p>
@@ -106,7 +143,12 @@
   
   <div class="project-card">
     <div class="project-image">
-      <img src="/images/project3.png" alt="咖啡厅自助点餐系统" />
+      <div class="placeholder-image order-placeholder">
+        <div>
+          <div style="font-size: 48px; margin-bottom: 15px;">☕</div>
+          <div style="font-size: 24px; margin-bottom: 10px;">咖啡厅自助点餐</div>
+        </div>
+      </div>
     </div>
     <h3>咖啡厅自助点餐系统</h3>
     <p>为某精品咖啡连锁店开发的自助点餐系统，提升了用户体验和运营效率。</p>
@@ -119,7 +161,12 @@
   
   <div class="project-card">
     <div class="project-image">
-      <img src="/images/project3.png" alt="校园食堂点餐系统" />
+      <div class="placeholder-image order-placeholder">
+        <div>
+          <div style="font-size: 48px; margin-bottom: 15px;">🍴</div>
+          <div style="font-size: 24px; margin-bottom: 10px;">校园食堂点餐</div>
+        </div>
+      </div>
     </div>
     <h3>校园食堂点餐系统</h3>
     <p>为某高校食堂开发的点餐系统，解决了高峰期排队问题，提升了师生就餐体验。</p>
@@ -129,14 +176,6 @@
       <span>数据分析</span>
     </div>
   </div>
-</div>
-
-## 联系我们
-
-如果您对我们的项目感兴趣，或者有任何定制化的需求，欢迎联系我们，我们将为您提供专业的解决方案。
-
-<div class="contact-button">
-  <a href="/contact/">立即咨询</a>
 </div>
 
 <style>
@@ -153,6 +192,7 @@
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s;
+  position: relative;
 }
 
 .project-card:hover {
@@ -171,8 +211,34 @@
   transition: transform 0.5s;
 }
 
-.project-card:hover .project-image img {
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  transition: transform 0.5s;
+}
+
+.project-card:hover .placeholder-image {
   transform: scale(1.05);
+}
+
+.web-placeholder {
+  background-color: #3498db;
+  background-image: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.miniprogram-placeholder {
+  background-color: #2ecc71;
+  background-image: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.order-placeholder {
+  background-color: #e74c3c;
+  background-image: linear-gradient(135deg, #e74c3c, #c0392b);
 }
 
 .project-card h3 {
@@ -219,6 +285,39 @@
 }
 
 .contact-button a:hover {
+  background-color: var(--vp-c-brand-dark);
+}
+
+.featured-project {
+  border: 2px solid var(--vp-c-brand);
+}
+
+.featured-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--vp-c-brand);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.view-details-btn {
+  display: block;
+  text-align: center;
+  margin: 0 20px 20px;
+  padding: 8px 0;
+  background-color: var(--vp-c-brand);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.view-details-btn:hover {
   background-color: var(--vp-c-brand-dark);
 }
 

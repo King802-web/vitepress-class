@@ -2,16 +2,16 @@
 layout: home
 title: 创意工作室 - 专业的设计与开发服务
 hero:
-  name: 创意工作室
+  name: 江江创意工作室
   text: 专业的设计与开发服务
   tagline: 提供网页设计、小程序开发和点餐系统解决方案
   image:
-    src: /logo.svg
+    # src: /logo.svg
     alt: 创意工作室
   actions:
     - theme: brand
       text: 了解我们的服务
-      link: /services/
+      link: /services/web-development
     - theme: alt
       text: 查看作品集
       link: /projects/
@@ -55,6 +55,60 @@ features:
       </div>
     </div>
   </div>
+
+  <!-- 联系我们部分 -->
+  <div class="home-section contact-section">
+    <h2>联系我们</h2>
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div class="contact-text">
+            <h3>联系人</h3>
+            <p>王生（微信同号：19221664302）</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-text">
+            <h3>电话</h3>
+            <p>19221664302</p>
+          </div>
+        </div>
+        <!-- <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-text">
+            <h3>邮箱</h3>
+            <p>1623636703@qq.com</p>
+          </div>
+        </div> -->
+        <!-- <div class="contact-item">
+          <div class="contact-icon">⏰</div>
+          <div class="contact-text">
+            <h3>工作时间</h3>
+            <p>周一至周五 9:00-18:00</p>
+          </div>
+        </div> -->
+      </div>
+      <div class="contact-qrcodes">
+        <div class="qrcode-item">
+          <div class="qrcode-image">
+            <img src="/images/微信二维码.jpg" alt="微信二维码" />
+          </div>
+          <h3>微信联系</h3>
+          <p>扫描二维码，添加微信</p>
+        </div>
+        <div class="qrcode-item">
+          <div class="qrcode-image">
+            <img src="/images/点餐二维码.jpg" alt="小程序二维码" />
+          </div>
+          <h3>小程序体验</h3>
+          <p>扫描二维码，体验点餐小程序</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- 服务流程部分 -->
   <div class="home-section process-section">
@@ -136,7 +190,7 @@ features:
       </div>
     </div>
     <div class="view-all-projects">
-      <a href="/projects/" class="custom-button">查看全部作品</a>
+      <a href="/projects/" class="custom-button">查看更多案例</a>
     </div>
   </div>
 
@@ -149,7 +203,7 @@ features:
           <p>"创意工作室的团队非常专业，他们开发的企业网站不仅美观大方，而且功能齐全，完全满足了我们的需求。"</p>
         </div>
         <div class="testimonial-author">
-          <div class="placeholder-image client-placeholder client1-placeholder">王</div>
+          <!-- <div class="placeholder-image client-placeholder client1-placeholder">王</div> -->
           <div class="author-info">
             <h4>王先生</h4>
             <p>某科技公司CEO</p>
@@ -161,7 +215,7 @@ features:
           <p>"我们餐厅使用创意工作室开发的点餐系统后，运营效率提升了30%，顾客体验也得到了很大改善。"</p>
         </div>
         <div class="testimonial-author">
-          <div class="placeholder-image client-placeholder client2-placeholder">李</div>
+          <!-- <div class="placeholder-image client-placeholder client2-placeholder">李</div> -->
           <div class="author-info">
             <h4>李女士</h4>
             <p>连锁餐厅经理</p>
@@ -173,7 +227,7 @@ features:
           <p>"创意工作室开发的小程序帮助我们品牌实现了线上线下的无缝连接，会员数量在三个月内增长了200%。"</p>
         </div>
         <div class="testimonial-author">
-          <div class="placeholder-image client-placeholder client3-placeholder">张</div>
+          <!-- <div class="placeholder-image client-placeholder client3-placeholder">张</div> -->
           <div class="author-info">
             <h4>张先生</h4>
             <p>某品牌营销总监</p>
@@ -183,7 +237,7 @@ features:
     </div>
   </div>
 
-  <!-- 新闻动态部分 -->
+  <!-- 新闻动态部分
   <div class="home-section news-section">
     <h2>新闻动态</h2>
     <div class="news-grid">
@@ -209,63 +263,9 @@ features:
     <div class="view-all-news">
       <a href="/news/" class="custom-button">查看全部动态</a>
     </div>
-  </div>
+  </div> -->
 
-  <!-- 联系我们部分 -->
-  <div class="home-section contact-section">
-    <h2>联系我们</h2>
-    <div class="contact-content">
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div class="contact-text">
-            <h3>地址</h3>
-            <p>广东省广州市天河区科技园区88号创意大厦15楼</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div class="contact-text">
-            <h3>电话</h3>
-            <p>020-12345678</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">✉️</div>
-          <div class="contact-text">
-            <h3>邮箱</h3>
-            <p>contact@creativestudio.com</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">⏰</div>
-          <div class="contact-text">
-            <h3>工作时间</h3>
-            <p>周一至周五 9:00-18:00</p>
-          </div>
-        </div>
-      </div>
-      <div class="contact-form">
-        <h3>给我们留言</h3>
-        <form>
-          <div class="form-group">
-            <input type="text" placeholder="您的姓名" required />
-          </div>
-          <div class="form-group">
-            <input type="email" placeholder="您的邮箱" required />
-          </div>
-          <div class="form-group">
-            <input type="tel" placeholder="您的电话" />
-          </div>
-          <div class="form-group">
-            <textarea placeholder="您的留言" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="submit-button">提交留言</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <style>
 /* 首页通用样式 */
@@ -570,42 +570,46 @@ features:
   color: #444;
 }
 
-.contact-form {
+.contact-qrcodes {
   flex: 1;
   min-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
-.contact-form h3 {
-  margin-bottom: 20px;
-  font-size: 1.4rem;
+.qrcode-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.form-group {
+.qrcode-image {
+  width: 150px;
+  height: 150px;
   margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.form-group input,
-.form-group textarea {
+.qrcode-image img {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
+  height: 100%;
+  object-fit: cover;
 }
 
-.submit-button {
-  padding: 12px 24px;
-  background-color: var(--vp-c-brand);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.qrcode-item h3 {
+  margin: 0 0 5px;
+  font-size: 1.2rem;
 }
 
-.submit-button:hover {
-  background-color: var(--vp-c-brand-dark);
+.qrcode-item p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
 }
 
 /* 响应式调整 */
@@ -620,6 +624,10 @@ features:
   
   .contact-content {
     flex-direction: column;
+  }
+  
+  .contact-qrcodes {
+    justify-content: space-around;
   }
 }
 </style>

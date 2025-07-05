@@ -9,7 +9,9 @@
 <div class="team-grid">
   <div class="team-member">
     <div class="member-avatar">
-      <img src="/images/team/ceo.png" alt="张明 - 创始人兼CEO" />
+      <div class="placeholder-image team-placeholder">
+        <div>张</div>
+      </div>
     </div>
     <div class="member-info">
       <h3>张明</h3>
@@ -25,7 +27,9 @@
 
   <div class="team-member">
     <div class="member-avatar">
-      <img src="/images/team/cto.png" alt="李强 - 技术总监" />
+      <div class="placeholder-image team-placeholder">
+        <div>李</div>
+      </div>
     </div>
     <div class="member-info">
       <h3>李强</h3>
@@ -41,7 +45,9 @@
 
   <div class="team-member">
     <div class="member-avatar">
-      <img src="/images/team/design-director.png" alt="王芳 - 设计总监" />
+      <div class="placeholder-image team-placeholder">
+        <div>王</div>
+      </div>
     </div>
     <div class="member-info">
       <h3>王芳</h3>
@@ -57,7 +63,9 @@
 
   <div class="team-member">
     <div class="member-avatar">
-      <img src="/images/team/pm.png" alt="赵伟 - 产品经理" />
+      <div class="placeholder-image team-placeholder">
+        <div>赵</div>
+      </div>
     </div>
     <div class="member-info">
       <h3>赵伟</h3>
@@ -73,7 +81,9 @@
 
   <div class="team-member">
     <div class="member-avatar">
-      <img src="/images/team/frontend.png" alt="陈静 - 前端开发工程师" />
+      <div class="placeholder-image team-placeholder">
+        <div>陈</div>
+      </div>
     </div>
     <div class="member-info">
       <h3>陈静</h3>
@@ -89,7 +99,9 @@
 
   <div class="team-member">
     <div class="member-avatar">
-      <img src="/images/team/backend.png" alt="刘洋 - 后端开发工程师" />
+      <div class="placeholder-image team-placeholder">
+        <div>刘</div>
+      </div>
     </div>
     <div class="member-info">
       <h3>刘洋</h3>
@@ -105,7 +117,9 @@
 
   <div class="team-member">
     <div class="member-avatar">
-      <img src="/images/team/miniprogram.png" alt="周小明 - 小程序开发专家" />
+      <div class="placeholder-image team-placeholder">
+        <div>周</div>
+      </div>
     </div>
     <div class="member-info">
       <h3>周小明</h3>
@@ -121,7 +135,9 @@
 
   <div class="team-member">
     <div class="member-avatar">
-      <img src="/images/team/marketing.png" alt="林小华 - 市场营销专员" />
+      <div class="placeholder-image team-placeholder">
+        <div>林</div>
+      </div>
     </div>
     <div class="member-info">
       <h3>林小华</h3>
@@ -184,13 +200,31 @@
 .member-avatar {
   height: 200px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
 }
 
-.member-avatar img {
+.team-placeholder {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
 }
+
+.team-placeholder:nth-child(8n+1) { background-color: #3498db; }
+.team-placeholder:nth-child(8n+2) { background-color: #2ecc71; }
+.team-placeholder:nth-child(8n+3) { background-color: #9b59b6; }
+.team-placeholder:nth-child(8n+4) { background-color: #e74c3c; }
+.team-placeholder:nth-child(8n+5) { background-color: #f39c12; }
+.team-placeholder:nth-child(8n+6) { background-color: #1abc9c; }
+.team-placeholder:nth-child(8n+7) { background-color: #34495e; }
+.team-placeholder:nth-child(8n+8) { background-color: #d35400; }
 
 .member-info {
   padding: 20px;

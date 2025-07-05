@@ -9,7 +9,7 @@ export default defineConfig({
    * 网站标题
    * 显示在浏览器标签页和首页标题中
    */
-  title: "创意工作室",
+  title: " ",
   
   /**
    * 网站描述
@@ -56,11 +56,11 @@ export default defineConfig({
       // 作品展示
       { text: '作品展示', link: '/projects/' },
       // 新闻动态
-      { text: '新闻动态', link: '/news/' },
+      // { text: '新闻动态', link: '/news/' },
       // 联系我们
       { text: '联系我们', link: '/contact/' },
       // 功能规划
-      { text: '功能规划', link: '/功能' }
+      // { text: '功能规划', link: '/功能' }
     ],
 
     /**
@@ -101,21 +101,22 @@ export default defineConfig({
         {
           text: '作品展示',
           items: [
-            { text: '全部作品', link: '/projects/' }
+            { text: '全部作品', link: '/projects/' },
+            { text: '微信小程序案例', link: '/projects/miniprogram-case' }
           ]
         }
       ],
       /**
        * 新闻动态侧边栏
        */
-      '/news/': [
-        {
-          text: '新闻动态',
-          items: [
-            { text: '全部动态', link: '/news/' }
-          ]
-        }
-      ],
+      // '/news/': [
+      //   {
+      //     text: '新闻动态',
+      //     items: [
+      //       { text: '全部动态', link: '/news/' }
+      //     ]
+      //   }
+      // ],
       /**
        * 微信小程序文档
        */
@@ -144,10 +145,10 @@ export default defineConfig({
      * 社交链接
      * 显示在网站右上角的社交媒体图标和链接
      */
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com' },
-      { icon: 'twitter', link: 'https://twitter.com' }
-    ],
+    // socialLinks: [
+    //   { icon: 'github', link: 'https://github.com' },
+    //   { icon: 'twitter', link: 'https://twitter.com' }
+    // ],
 
     /**
      * 页脚配置

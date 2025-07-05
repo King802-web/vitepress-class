@@ -115,29 +115,44 @@
 
 <div class="case-studies">
   <div class="case-study">
-    <img src="/images/cases/web-case1.png" alt="某科技公司官网" />
+    <div class="placeholder-image case-placeholder">
+      <div>
+        <div style="font-size: 32px; margin-bottom: 10px;">🌐</div>
+        <div>科技公司官网</div>
+      </div>
+    </div>
     <div class="case-content">
       <h3>某科技公司官网</h3>
       <p>为国内领先的人工智能科技公司打造的企业官网，采用现代化设计风格，展示公司产品和技术实力。</p>
-      <a href="/projects/websites#case1" class="view-case">查看详情</a>
+      <a href="/projects/" class="view-case">查看详情</a>
     </div>
   </div>
   
   <div class="case-study">
-    <img src="/images/cases/web-case2.png" alt="在线教育平台" />
+    <div class="placeholder-image case-placeholder">
+      <div>
+        <div style="font-size: 32px; margin-bottom: 10px;">🎓</div>
+        <div>在线教育平台</div>
+      </div>
+    </div>
     <div class="case-content">
       <h3>在线教育平台</h3>
       <p>为教育机构开发的在线课程学习平台，支持视频课程、在线习题和学习进度跟踪等功能。</p>
-      <a href="/projects/websites#case2" class="view-case">查看详情</a>
+      <a href="/projects/" class="view-case">查看详情</a>
     </div>
   </div>
   
   <div class="case-study">
-    <img src="/images/cases/web-case3.png" alt="电子商务网站" />
+    <div class="placeholder-image case-placeholder">
+      <div>
+        <div style="font-size: 32px; margin-bottom: 10px;">🛍️</div>
+        <div>电子商务网站</div>
+      </div>
+    </div>
     <div class="case-content">
       <h3>电子商务网站</h3>
       <p>为某服装品牌打造的电商平台，支持产品展示、在线购买、会员管理等功能，并与微信小程序实现数据互通。</p>
-      <a href="/projects/websites#case3" class="view-case">查看详情</a>
+      <a href="/projects/" class="view-case">查看详情</a>
     </div>
   </div>
 </div>
@@ -174,6 +189,21 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.case-placeholder {
+  background-color: #f39c12;
+  background-image: linear-gradient(135deg, #f39c12, #d35400);
 }
 
 .case-content {

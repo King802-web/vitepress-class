@@ -137,40 +137,49 @@
 
 <div class="case-studies">
   <div class="case-study">
-    <img src="/images/cases/miniprogram-case1.png" alt="品牌展示小程序" />
+    <div class="placeholder-image miniprogram-placeholder">
+      <div>
+        <div style="font-size: 32px; margin-bottom: 10px;">🏠</div>
+        <div>品牌展示小程序</div>
+      </div>
+    </div>
     <div class="case-content">
       <h3>品牌展示小程序</h3>
       <p>为某高端家居品牌打造的企业展示小程序，展示产品系列、设计理念和门店信息，支持在线预约设计师。</p>
-      <a href="/projects/miniprogram#case1" class="view-case">查看详情</a>
+      <a href="/projects/miniprogram-case" class="view-case">查看详情</a>
     </div>
   </div>
   
   <div class="case-study">
-    <img src="/images/cases/miniprogram-case2.png" alt="会员服务小程序" />
+    <div class="placeholder-image miniprogram-placeholder">
+      <div>
+        <div style="font-size: 32px; margin-bottom: 10px;">💆</div>
+        <div>会员服务小程序</div>
+      </div>
+    </div>
     <div class="case-content">
       <h3>会员服务小程序</h3>
       <p>为某连锁美容机构开发的会员服务小程序，支持在线预约、会员卡管理、积分兑换等功能，提升会员粘性。</p>
-      <a href="/projects/miniprogram#case2" class="view-case">查看详情</a>
+      <a href="/projects/miniprogram-case" class="view-case">查看详情</a>
     </div>
   </div>
   
   <div class="case-study">
-    <img src="/images/cases/miniprogram-case3.png" alt="电商零售小程序" />
+    <div class="placeholder-image miniprogram-placeholder">
+      <div>
+        <div style="font-size: 32px; margin-bottom: 10px;">👚</div>
+        <div>电商零售小程序</div>
+      </div>
+    </div>
     <div class="case-content">
       <h3>电商零售小程序</h3>
       <p>为某服装品牌打造的电商小程序，支持商品展示、在线购买、会员管理等功能，并与官网实现数据互通。</p>
-      <a href="/projects/miniprogram#case3" class="view-case">查看详情</a>
+      <a href="/projects/miniprogram-case" class="view-case">查看详情</a>
     </div>
   </div>
 </div>
 
-## 联系我们
 
-如果您对我们的微信小程序开发服务感兴趣，或者有任何疑问，欢迎联系我们：
-
-- **电话**：020-12345678
-- **邮箱**：contact@creativestudio.com
-- **在线咨询**：点击网站右下角的客服图标，与我们的客服人员实时交流
 
 <style>
 .case-studies {
@@ -196,6 +205,21 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.miniprogram-placeholder {
+  background-color: #2ecc71;
+  background-image: linear-gradient(135deg, #2ecc71, #27ae60);
 }
 
 .case-content {
