@@ -9,13 +9,13 @@ export default defineConfig({
    * 网站标题
    * 显示在浏览器标签页和首页标题中
    */
-  title: "在线教学平台",
+  title: "创意工作室",
   
   /**
    * 网站描述
    * 用于SEO优化，显示在搜索引擎结果中
    */
-  description: "教学创新平台和服务平台",
+  description: "专业的设计与开发服务，提供网页设计、小程序开发和点餐系统解决方案",
   
   /**
    * 主题配置
@@ -26,7 +26,7 @@ export default defineConfig({
      * 网站logo
      * 显示在导航栏左侧，路径相对于public目录
      */
-    logo: '/logo.png',
+    logo: '/logo.svg',
     
     /**
      * 导航栏配置
@@ -35,181 +35,106 @@ export default defineConfig({
     nav: [
       // 首页链接
       { text: '首页', link: '/' },
+      // 关于我们
       { 
-        // 下拉菜单 - 中心概况
-        text: '中心概况', 
+        text: '关于我们', 
         items: [
-          { text: '中心简介', link: '/about/introduction' },
-          { text: '成立背景', link: '/about/background' },
-          { text: '文化理念', link: '/about/culture' },
+          { text: '工作室简介', link: '/about/introduction' },
+          { text: '团队成员', link: '/about/team' }
         ]
       },
-      // 新增课程中心下拉菜单
+      // 服务内容
       { 
-        text: '课程中心', 
+        text: '服务内容', 
         items: [
-          { text: 'PC硬件与软件', link: '/courses/pc-basics/' },
-          { text: '网络原理', link: '/courses/network/' },
-          { text: '功能规划', link: '/功能.md' }
+          { text: '网站开发', link: '/services/web-development' },
+          { text: '小程序开发', link: '/services/miniprogram' },
+          { text: '点餐系统', link: '/services/ordering-system' },
+          { text: '设计服务', link: '/services/design' }
         ]
       },
-      // 单页链接 - 服务中心
-      { text: '服务中心', link: '/service' }
+      // 作品展示
+      { text: '作品展示', link: '/projects/' },
+      // 新闻动态
+      { text: '新闻动态', link: '/news/' },
+      // 联系我们
+      { text: '联系我们', link: '/contact/' },
+      // 功能规划
+      { text: '功能规划', link: '/功能' }
     ],
 
     /**
      * 侧边栏配置
      * 根据不同路径显示不同的侧边栏内容
-     * 可以为每个路径定制不同的侧边栏
      */
     sidebar: {
       /**
-       * 中心概况侧边栏
-       * 当访问 /about/ 路径下的页面时显示此侧边栏
+       * 关于我们侧边栏
        */
       '/about/': [
         {
-          text: '中心概况',
+          text: '关于我们',
           items: [
-            { text: '中心简介', link: '/about/introduction' },
-            { text: '成立背景', link: '/about/background' },
-            { text: '建设目标', link: '/about/goals' },
-            { text: '中心任务/功能', link: '/about/functions' },
-            { text: '运行机制', link: '/about/mechanism' },
-            { text: '创新中心分中心', link: '/about/branches' },
-            { text: '文化理念', link: '/about/culture' },
-            { text: '荣誉资质', link: '/about/honors' }
+            { text: '工作室简介', link: '/about/introduction' },
+            { text: '团队成员', link: '/about/team' }
           ]
         }
       ],
       /**
-       * 产品系统侧边栏
-       * 当访问 /products/ 路径下的页面时显示此侧边栏
+       * 服务内容侧边栏
        */
-      '/products/': [
+      '/services/': [
         {
-          text: '产品系统',
+          text: '服务内容',
           items: [
-            { text: 'RobDTS软件', link: '/products/robdts' },
-            { text: '柔性制造系统', link: '/products/flexible-manufacturing' },
-            { text: '智能磨抛工作站', link: '/products/polishing-station' },
-            { text: '智能制造实训平台', link: '/products/training-platform' },
-            { text: '智能焊接工作站', link: '/products/welding-station' },
-            { text: '售后服务', link: '/products/after-sales' }
+            { text: '网站开发', link: '/services/web-development' },
+            { text: '小程序开发', link: '/services/miniprogram' },
+            { text: '点餐系统', link: '/services/ordering-system' },
+            { text: '设计服务', link: '/services/design' }
           ]
         }
       ],
       /**
-       * 创新动态侧边栏
-       * 当访问 /news/ 路径下的页面时显示此侧边栏
+       * 作品展示侧边栏
+       */
+      '/projects/': [
+        {
+          text: '作品展示',
+          items: [
+            { text: '全部作品', link: '/projects/' }
+          ]
+        }
+      ],
+      /**
+       * 新闻动态侧边栏
        */
       '/news/': [
         {
-          text: '创新动态',
+          text: '新闻动态',
           items: [
-            { text: '中心动态', link: '/news/center-news' },
-            { text: '媒体聚焦', link: '/news/media-focus' },
-            { text: '行业动态', link: '/news/industry-news' },
-            { text: '前沿技术', link: '/news/cutting-edge' }
+            { text: '全部动态', link: '/news/' }
           ]
         }
       ],
       /**
-       * 创新联盟侧边栏
-       * 当访问 /alliance/ 路径下的页面时显示此侧边栏
+       * 微信小程序文档
        */
-      '/alliance/': [
+      '/miniprogram/': [
         {
-          text: '创新联盟',
+          text: '微信小程序',
           items: [
-            { text: '联盟介绍', link: '/alliance/introduction' },
-            { text: '联盟成员', link: '/alliance/members' },
-            { text: '联盟动态', link: '/alliance/news' },
-            { text: '湾区资讯', link: '/alliance/bay-area-info' }
+            { text: '功能概述', link: '/miniprogram/' }
           ]
         }
       ],
       /**
-       * PC课程侧边栏
-       * 当访问 /courses/pc-basics/ 路径下的页面时显示此侧边栏
+       * 点餐小程序文档
        */
-      '/courses/pc-basics/': [
+      '/orderapp/': [
         {
-          text: 'PC硬件与软件课程',
+          text: '点餐小程序',
           items: [
-            { text: '课程概述', link: '/courses/pc-basics/' },
-            { 
-              text: '硬件基础', 
-              collapsed: false,
-              items: [
-                { text: '概述', link: '/courses/pc-basics/hardware/' },
-                { text: '计算机组成原理概述', link: '/courses/pc-basics/hardware/overview' },
-                { text: 'CPU架构与工作原理', link: '/courses/pc-basics/hardware/cpu' },
-                { text: '内存类型与工作机制', link: '/courses/pc-basics/hardware/memory' },
-                { text: '存储设备', link: '/courses/pc-basics/hardware/storage' },
-                { text: '主板与总线技术', link: '/courses/pc-basics/hardware/motherboard' },
-                { text: '显卡与图形处理', link: '/courses/pc-basics/hardware/gpu' },
-                { text: '输入输出设备', link: '/courses/pc-basics/hardware/io-devices' }
-              ]
-            },
-            { 
-              text: 'PC组装与维护', 
-              collapsed: true,
-              link: '/courses/pc-basics/assembly/'
-            },
-            { 
-              text: '操作系统', 
-              collapsed: true,
-              link: '/courses/pc-basics/os/'
-            },
-            { 
-              text: '常用软件应用', 
-              collapsed: true,
-              link: '/courses/pc-basics/software/'
-            }
-          ]
-        }
-      ],
-      /**
-       * 网络课程侧边栏
-       * 当访问 /courses/network/ 路径下的页面时显示此侧边栏
-       */
-      '/courses/network/': [
-        {
-          text: '网络原理课程',
-          items: [
-            { text: '课程概述', link: '/courses/network/' },
-            { 
-              text: '网络基础知识', 
-              collapsed: false,
-              items: [
-                { text: '概述', link: '/courses/network/basics/' },
-                { text: '网络发展简史', link: '/courses/network/basics/history' },
-                { text: '网络模型与协议族', link: '/courses/network/basics/models' },
-                { text: 'IP地址与域名系统', link: '/courses/network/basics/ip-dns' },
-                { text: '网络设备与功能', link: '/courses/network/basics/devices' }
-              ]
-            },
-            { 
-              text: '网络连接过程详解', 
-              collapsed: true,
-              link: '/courses/network/connection/'
-            },
-            { 
-              text: 'TCP/IP协议详解', 
-              collapsed: true,
-              link: '/courses/network/protocols/'
-            },
-            { 
-              text: '网络安全基础', 
-              collapsed: true,
-              link: '/courses/network/security/'
-            },
-            { 
-              text: '现代网络应用', 
-              collapsed: true,
-              link: '/courses/network/applications/'
-            }
+            { text: '系统介绍', link: '/orderapp/' }
           ]
         }
       ]
@@ -218,10 +143,10 @@ export default defineConfig({
     /**
      * 社交链接
      * 显示在网站右上角的社交媒体图标和链接
-     * 支持多种社交平台图标，如GitHub、Twitter等
      */
     socialLinks: [
-      { icon: 'github', link: 'https://github.com' }
+      { icon: 'github', link: 'https://github.com' },
+      { icon: 'twitter', link: 'https://twitter.com' }
     ],
 
     /**
@@ -229,8 +154,8 @@ export default defineConfig({
      * 显示在网站底部的版权信息和备案号
      */
     footer: {
-      message: 'Copyright 2023 广东省机器人创新中心有限公司 All Rights Reserved',
-      copyright: '粤ICP备20068987号'
+      message: 'Copyright © 2023-2024 创意工作室 All Rights Reserved',
+      copyright: 'ICP备案号xxxxxxxx'
     }
   }
 })
