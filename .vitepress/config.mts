@@ -5,6 +5,9 @@ import { defineConfig } from 'vitepress'
  * 本文件用于配置整个网站的基本设置、导航栏、侧边栏等全局元素
  */
 export default defineConfig({
+  // 设置基本路径，应该与GitHub仓库名称一致
+  base: '/vitepress-class/',
+  
   /**
    * 网站标题
    * 显示在浏览器标签页和首页标题中
