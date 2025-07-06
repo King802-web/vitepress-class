@@ -9,7 +9,7 @@
     "dev": "vitepress dev",
     "build": "vitepress build",
     "deploy:unix": "bash deploy.sh",
-    "deploy:win": "deploy.bat",
+    "deploy:win": ".\\deploy.bat",
     "deploy": "npm run deploy:win"
   }
 }

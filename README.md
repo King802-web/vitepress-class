@@ -16,14 +16,14 @@ npm run dev
 
 ### 准备工作
 
-1. 在GitHub上创建一个名为`vitepress-my`的仓库
+1. 在GitHub上创建一个名为`vitepress-class`的仓库
 2. 将本地代码推送到GitHub仓库：
 
 ```bash
 git init
 git add .
 git commit -m "初始提交"
-git remote add origin https://github.com/<你的用户名>/vitepress-my.git
+git remote add origin https://github.com/<你的用户名>/vitepress-class.git
 git push -u origin main
 ```
 
@@ -35,9 +35,9 @@ git push -u origin main
 
 ```batch
 :: 将这一行
-git push -f git@github.com:<USERNAME>/vitepress-my.git main:gh-pages
+git push -f git@github.com:<USERNAME>/vitepress-class.git main:gh-pages
 :: 修改为
-git push -f git@github.com:<你的用户名>/vitepress-my.git main:gh-pages
+git push -f git@github.com:<你的用户名>/vitepress-class.git main:gh-pages
 ```
 
 2. 运行部署命令：
@@ -52,9 +52,9 @@ npm run deploy
 
 ```bash
 # 将这一行
-git push -f git@github.com:<USERNAME>/vitepress-my.git main:gh-pages
+git push -f git@github.com:<USERNAME>/vitepress-class.git main:gh-pages
 # 修改为
-git push -f git@github.com:<你的用户名>/vitepress-my.git main:gh-pages
+git push -f git@github.com:<你的用户名>/vitepress-class.git main:gh-pages
 ```
 
 2. 运行部署命令：
@@ -68,7 +68,7 @@ npm run deploy:unix
    - 在`Source`部分选择`gh-pages`分支和`/(root)`文件夹
    - 点击`Save`
 
-4. 等待几分钟后，您的网站将可以通过 `https://<你的用户名>.github.io/vitepress-my/` 访问。
+4. 等待几分钟后，您的网站将可以通过 `https://<你的用户名>.github.io/vitepress-class/` 访问。
 
 ## 注意事项
 
@@ -77,8 +77,8 @@ npm run deploy:unix
 - 如果您在Windows系统上遇到Git认证问题，可以尝试使用HTTPS方式：
   ```batch
   :: 在deploy.bat中将
-  git push -f git@github.com:<你的用户名>/vitepress-my.git main:gh-pages
+  git push -f git@github.com:<你的用户名>/vitepress-class.git main:gh-pages
   :: 修改为
-  git push -f https://github.com/<你的用户名>/vitepress-my.git main:gh-pages
+  git push -f https://github.com/<你的用户名>/vitepress-class.git main:gh-pages
   ```
 - 首次部署后，需要在GitHub仓库设置中手动启用GitHub Pages 

@@ -17,7 +17,7 @@ git commit -m "deploy"
 
 :: 如果发布到 https://<USERNAME>.github.io/<REPO>
 :: 请替换 <USERNAME> 为你的GitHub用户名
-git push -f git@github.com:King802-web/vitepress-class.git main:gh-pages
+git push -f git@github.com:King802-web/vitepress-class.git master:gh-pages
 
 cd ..\..
 
