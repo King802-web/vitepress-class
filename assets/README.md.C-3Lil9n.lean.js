@@ -1,0 +1,1 @@
+import{_ as i,c as a,o as t,ae as h}from"./chunks/framework.GJak29Hp.js";const o=JSON.parse('{"title":"创意工作室网站","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md"}'),l={name:"README.md"};function n(e,s,p,k,d,g){return t(),a("div",null,s[0]||(s[0]=[h("",22)]))}const c=i(l,[["render",n]]);export{o as __pageData,c as default};

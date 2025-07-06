@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>微信二维码</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+    }
+    .qrcode-container {
+      width: 300px;
+      height: 300px;
+      position: relative;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .qrcode-grid {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(25, 1fr);
+      grid-template-rows: repeat(25, 1fr);
+      gap: 0;
+    }
+    .qrcode-cell {
+      background-color: transparent;
+    }
+    .qrcode-cell.black {
+      background-color: #333;
+    }
+    .qrcode-corner {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background-color: #333;
+      border: 10px solid #333;
+    }
+    .qrcode-corner::before,
+    .qrcode-corner::after {
+      content: "";
+      position: absolute;
+      background-color: white;
+    }
+    .qrcode-corner::before {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .qrcode-corner::after {
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      background-color: #333;
+    }
+    .corner-top-left {
+      top: 20px;
+      left: 20px;
+    }
+    .corner-top-right {
+      top: 20px;
+      right: 20px;
+    }
+    .corner-bottom-left {
+      bottom: 20px;
+      left: 20px;
+    }
+    .qrcode-center {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: #333;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .qrcode-logo {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background-color: white;
+      border-radius: 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-size: 40px;
+      font-weight: bold;
+      color: #07C160;
+    }
+  </style>
+  <script>
+    // 生成随机二维码图案
+    window.onload = function() {
+      const grid = document.querySelector('.qrcode-grid');
+      
+      // 清除网格中的所有单元格
+      while (grid.firstChild) {
+        grid.removeChild(grid.firstChild);
+      }
+      
+      // 创建25x25的网格
+      for (let i = 0; i < 25 * 25; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'qrcode-cell';
+        
+        // 避开角落和中心的区域
+        const row = Math.floor(i / 25);
+        const col = i % 25;
+        
+        // 角落区域
+        const isCornerArea = 
+          (row < 7 && col < 7) || // 左上角
+          (row < 7 && col > 17) || // 右上角
+          (row > 17 && col < 7);   // 左下角
+          
+        // 中心区域
+        const isCenterArea = 
+          (row > 9 && row < 15 && col > 9 && col < 15);
+          
+        if (!isCornerArea && !isCenterArea) {
+          // 随机决定是否为黑色单元格
+          if (Math.random() > 0.7) {
+            cell.classList.add('black');
+          }
+        }
+        
+        grid.appendChild(cell);
+      }
+    };
+  </script>
+</head>
+<body>
+  <div class="qrcode-container">
+    <div class="qrcode-grid"></div>
+    <div class="qrcode-corner corner-top-left"></div>
+    <div class="qrcode-corner corner-top-right"></div>
+    <div class="qrcode-corner corner-bottom-left"></div>
+    <div class="qrcode-center"></div>
+    <div class="qrcode-logo">W</div>
+  </div>
+</body>
+</html> 

@@ -1,0 +1,1 @@
+import{_ as e,c as s,o as i,ae as l}from"./chunks/framework.GJak29Hp.js";const o=JSON.parse('{"title":"团队成员","description":"","frontmatter":{},"headers":[],"relativePath":"about/team.md","filePath":"about/team.md"}'),d={name:"about/team.md"};function m(r,a,t,p,c,v){return i(),s("div",null,a[0]||(a[0]=[l("",14)]))}const h=e(d,[["render",m]]);export{o as __pageData,h as default};

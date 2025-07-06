@@ -1,0 +1,1 @@
+import{_ as e,c as s,o as d,ae as r}from"./chunks/framework.GJak29Hp.js";const p=JSON.parse('{"title":"新闻动态","description":"","frontmatter":{},"headers":[],"relativePath":"news/index.md","filePath":"news/index.md"}'),i={name:"news/index.md"};function n(t,a,c,l,o,h){return d(),s("div",null,a[0]||(a[0]=[r("",8)]))}const w=e(i,[["render",n]]);export{p as __pageData,w as default};

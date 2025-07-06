@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生成示例图片</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      text-align: center;
+      color: #0066cc;
+    }
+    
+    .image-generator {
+      margin-bottom: 30px;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 6px;
+    }
+    
+    canvas {
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+    }
+    
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    
+    button {
+      padding: 8px 16px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background: #0055aa;
+    }
+    
+    p {
+      text-align: center;
+      margin-top: 10px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>示例图片生成器</h1>
+    
+    <div class="image-generator">
+      <h2>Banner图片 (1200x400)</h2>
+      <canvas id="bannerCanvas" width="1200" height="400"></canvas>
+      <div class="controls">
+        <button onclick="generateBanner('蓝色')">蓝色主题</button>
+        <button onclick="generateBanner('绿色')">绿色主题</button>
+        <button onclick="generateBanner('紫色')">紫色主题</button>
+        <button onclick="downloadCanvas('bannerCanvas', 'banner.jpg')">下载图片</button>
+      </div>
+      <p>点击按钮生成不同主题的Banner图片，然后下载并保存到public/images目录</p>
+    </div>
+    
+    <div class="image-generator">
+      <h2>轮播图片 (1200x400)</h2>
+      <canvas id="slideCanvas" width="1200" height="400"></canvas>
+      <div class="controls">
+        <button onclick="generateSlide(1)">轮播图1</button>
+        <button onclick="generateSlide(2)">轮播图2</button>
+        <button onclick="generateSlide(3)">轮播图3</button>
+        <button onclick="downloadCanvas('slideCanvas', 'slide.jpg')">下载图片</button>
+      </div>
+      <p>点击按钮生成不同的轮播图片，然后下载并保存到public/images/slides目录</p>
+    </div>
+  </div>
+
+  <script>
+    // Banner生成函数
+    function generateBanner(theme) {
+      const canvas = document.getElementById('bannerCanvas');
+      const ctx = canvas.getContext('2d');
+      let gradient;
+      
+      // 清空画布
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // 根据主题设置不同的渐变色
+      if (theme === '蓝色') {
+        gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, '#0066cc');
+        gradient.addColorStop(1, '#003366');
+      } else if (theme === '绿色') {
+        gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, '#2e8b57');
+        gradient.addColorStop(1, '#1a5632');
+      } else if (theme === '紫色') {
+        gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, '#6a5acd');
+        gradient.addColorStop(1, '#483d8b');
+      }
+      
+      // 填充背景
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // 添加网格图案
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+      ctx.lineWidth = 1;
+      
+      // 水平线
+      for (let i = 0; i < canvas.height; i += 20) {
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(canvas.width, i);
+        ctx.stroke();
+      }
+      
+      // 垂直线
+      for (let i = 0; i < canvas.width; i += 20) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, canvas.height);
+        ctx.stroke();
+      }
+      
+      // 添加文字
+      ctx.fillStyle = 'white';
+      ctx.font = 'bold 80px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('广东省机器人创新中心', canvas.width/2, canvas.height/2 - 50);
+      
+      ctx.font = '40px Arial';
+      ctx.fillText('技术创新 · 产业赋能', canvas.width/2, canvas.height/2 + 50);
+    }
+    
+    // 轮播图生成函数
+    function generateSlide(slideNumber) {
+      const canvas = document.getElementById('slideCanvas');
+      const ctx = canvas.getContext('2d');
+      let gradient;
+      
+      // 清空画布
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // 根据幻灯片编号设置不同的背景
+      if (slideNumber === 1) {
+        gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, '#0066cc');
+        gradient.addColorStop(1, '#004080');
+        title = '机器人创新技术';
+        subtitle = '推动机器人技术在各行业的应用与发展';
+      } else if (slideNumber === 2) {
+        gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, '#2e8b57');
+        gradient.addColorStop(1, '#1a5632');
+        title = '智能制造解决方案';
+        subtitle = '为企业提供全方位的智能制造技术支持';
+      } else if (slideNumber === 3) {
+        gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, '#6a5acd');
+        gradient.addColorStop(1, '#483d8b');
+        title = '产学研合作交流';
+        subtitle = '促进产学研用协同创新，加速科技成果转化';
+      }
+      
+      // 填充背景
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // 添加图案
+      for (let i = 0; i < 30; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const radius = Math.random() * 50 + 10;
+        
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+        ctx.fill();
+      }
+      
+      // 添加中央半透明背景
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+      const rectWidth = 800;
+      const rectHeight = 200;
+      const rectX = (canvas.width - rectWidth) / 2;
+      const rectY = (canvas.height - rectHeight) / 2;
+      ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+      
+      // 添加文字
+      ctx.fillStyle = 'white';
+      ctx.font = 'bold 60px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(title, canvas.width/2, canvas.height/2 - 30);
+      
+      ctx.font = '30px Arial';
+      ctx.fillText(subtitle, canvas.width/2, canvas.height/2 + 30);
+      
+      // 添加幻灯片编号
+      ctx.font = 'bold 24px Arial';
+      ctx.fillText('轮播图 ' + slideNumber, canvas.width - 80, canvas.height - 20);
+    }
+    
+    // 下载Canvas为图片
+    function downloadCanvas(canvasId, filename) {
+      const canvas = document.getElementById(canvasId);
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = canvas.toDataURL('image/jpeg', 0.8);
+      link.click();
+    }
+    
+    // 页面加载后初始化显示
+    window.onload = function() {
+      generateBanner('蓝色');
+      generateSlide(1);
+    };
+  </script>
+</body>
+</html> 

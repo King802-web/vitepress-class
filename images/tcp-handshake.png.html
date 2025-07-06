@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TCP三次握手过程示意图</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .diagram-container {
+            width: 800px;
+            height: 400px;
+            background-color: white;
+            border: 1px solid #ddd;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+        .device {
+            position: absolute;
+            width: 120px;
+            height: 250px;
+            background-color: #f5f5f5;
+            border: 2px solid #333;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 0;
+            box-sizing: border-box;
+        }
+        .device-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .device-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .client {
+            left: 100px;
+            top: 100px;
+        }
+        .server {
+            right: 100px;
+            top: 100px;
+        }
+        .timeline {
+            position: absolute;
+            width: 400px;
+            height: 3px;
+            background-color: #999;
+            top: 220px;
+            left: 200px;
+        }
+        .arrow {
+            position: absolute;
+            width: 400px;
+            height: 40px;
+            top: 170px;
+            left: 220px;
+        }
+        .arrow-line {
+            position: absolute;
+            height: 2px;
+            background-color: #0066cc;
+            top: 20px;
+        }
+        .arrow-head {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        .arrow-label {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+        }
+        .arrow-step {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #0066cc;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        /* 第一次握手 */
+        .arrow-1 .arrow-line {
+            width: 360px;
+            left: 0;
+        }
+        .arrow-1 .arrow-head {
+            right: 0;
+            top: 15px;
+            border-width: 5px 0 5px 10px;
+            border-color: transparent transparent transparent #0066cc;
+        }
+        .arrow-1 .arrow-label {
+            left: 140px;
+            top: -10px;
+        }
+        .arrow-1 .arrow-step {
+            left: 170px;
+            top: -30px;
+        }
+        
+        /* 第二次握手 */
+        .arrow-2 {
+            top: 230px;
+        }
+        .arrow-2 .arrow-line {
+            width: 360px;
+            right: 0;
+            transform: rotate(180deg);
+        }
+        .arrow-2 .arrow-head {
+            left: 0;
+            top: 15px;
+            border-width: 5px 10px 5px 0;
+            border-color: transparent #0066cc transparent transparent;
+        }
+        .arrow-2 .arrow-label {
+            right: 140px;
+            top: -10px;
+        }
+        .arrow-2 .arrow-step {
+            right: 170px;
+            top: -30px;
+        }
+        
+        /* 第三次握手 */
+        .arrow-3 {
+            top: 290px;
+        }
+        .arrow-3 .arrow-line {
+            width: 360px;
+            left: 0;
+        }
+        .arrow-3 .arrow-head {
+            right: 0;
+            top: 15px;
+            border-width: 5px 0 5px 10px;
+            border-color: transparent transparent transparent #0066cc;
+        }
+        .arrow-3 .arrow-label {
+            left: 140px;
+            top: -10px;
+        }
+        .arrow-3 .arrow-step {
+            left: 170px;
+            top: -30px;
+        }
+        .description {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            width: 80%;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="diagram-container">
+        <div class="title">TCP三次握手过程</div>
+        
+        <!-- 客户端和服务器 -->
+        <div class="device client">
+            <div class="device-icon">💻</div>
+            <div class="device-title">客户端</div>
+        </div>
+        
+        <div class="device server">
+            <div class="device-icon">🖥️</div>
+            <div class="device-title">服务器</div>
+        </div>
+        
+        <div class="timeline"></div>
+        
+        <!-- 第一次握手 -->
+        <div class="arrow arrow-1">
+            <div class="arrow-line"></div>
+            <div class="arrow-head"></div>
+            <div class="arrow-label">SYN=1, seq=x</div>
+            <div class="arrow-step">1</div>
+        </div>
+        
+        <!-- 第二次握手 -->
+        <div class="arrow arrow-2">
+            <div class="arrow-line"></div>
+            <div class="arrow-head"></div>
+            <div class="arrow-label">SYN=1, ACK=1, seq=y, ack=x+1</div>
+            <div class="arrow-step">2</div>
+        </div>
+        
+        <!-- 第三次握手 -->
+        <div class="arrow arrow-3">
+            <div class="arrow-line"></div>
+            <div class="arrow-head"></div>
+            <div class="arrow-label">ACK=1, seq=x+1, ack=y+1</div>
+            <div class="arrow-step">3</div>
+        </div>
+        
+        <div class="description">
+            TCP三次握手建立连接的过程：<br>
+            1. 客户端发送SYN包到服务器，表示请求建立连接<br>
+            2. 服务器回应SYN-ACK包，确认收到请求并同意建立连接<br>
+            3. 客户端发送ACK包，确认收到服务器的同意
+        </div>
+    </div>
+    <p>注意：这是一个临时的HTML文件，用于生成TCP三次握手过程图像。请将此页面截图并保存为PNG文件，或替换为专业设计的图像。</p>
+</body>
+</html> 

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>地图</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+    }
+    .map-container {
+      width: 800px;
+      height: 500px;
+      position: relative;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    .map-grid {
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(rgba(200, 200, 200, 0.5) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(200, 200, 200, 0.5) 1px, transparent 1px);
+      background-size: 20px 20px;
+      position: relative;
+    }
+    .road {
+      position: absolute;
+      background-color: #ffffff;
+    }
+    .road-horizontal {
+      height: 30px;
+      left: 0;
+      right: 0;
+    }
+    .road-vertical {
+      width: 30px;
+      top: 0;
+      bottom: 0;
+    }
+    .road-1 {
+      top: 100px;
+    }
+    .road-2 {
+      top: 300px;
+    }
+    .road-3 {
+      left: 200px;
+    }
+    .road-4 {
+      left: 500px;
+    }
+    .building {
+      position: absolute;
+      background-color: #dddddd;
+      border: 1px solid #cccccc;
+    }
+    .building-1 {
+      top: 150px;
+      left: 250px;
+      width: 200px;
+      height: 100px;
+    }
+    .building-2 {
+      top: 150px;
+      left: 550px;
+      width: 150px;
+      height: 150px;
+    }
+    .building-3 {
+      top: 350px;
+      left: 250px;
+      width: 100px;
+      height: 100px;
+    }
+    .building-4 {
+      top: 350px;
+      left: 400px;
+      width: 80px;
+      height: 120px;
+    }
+    .building-5 {
+      top: 350px;
+      left: 550px;
+      width: 120px;
+      height: 80px;
+    }
+    .target-location {
+      position: absolute;
+      top: 200px;
+      left: 350px;
+      width: 30px;
+      height: 30px;
+      background-color: #ff6b6b;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse 2s infinite;
+    }
+    .target-location::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 15px;
+      height: 15px;
+      background-color: white;
+      border-radius: 50%;
+    }
+    .location-label {
+      position: absolute;
+      top: 220px;
+      left: 350px;
+      background-color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      white-space: nowrap;
+      transform: translateX(-50%);
+    }
+    .park {
+      position: absolute;
+      background-color: #c8e6c9;
+      border-radius: 5px;
+    }
+    .park-1 {
+      top: 50px;
+      left: 50px;
+      width: 100px;
+      height: 100px;
+    }
+    .park-2 {
+      top: 350px;
+      left: 50px;
+      width: 100px;
+      height: 100px;
+    }
+    .water {
+      position: absolute;
+      background-color: #bbdefb;
+      border-radius: 5px;
+    }
+    .water-1 {
+      top: 50px;
+      left: 650px;
+      width: 100px;
+      height: 80px;
+    }
+    .compass {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: white;
+      border-radius: 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .compass-needle {
+      position: relative;
+      width: 2px;
+      height: 30px;
+      background-color: #333;
+    }
+    .compass-needle::before {
+      content: "N";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: #ff6b6b;
+    }
+    .compass-needle::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 10px solid #ff6b6b;
+    }
+    .scale {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background-color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+    }
+    .scale-bar {
+      width: 100px;
+      height: 5px;
+      background-color: #333;
+      margin-right: 5px;
+    }
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(255, 107, 107, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="map-container">
+    <div class="map-grid">
+      <div class="road road-horizontal road-1"></div>
+      <div class="road road-horizontal road-2"></div>
+      <div class="road road-vertical road-3"></div>
+      <div class="road road-vertical road-4"></div>
+      
+      <div class="building building-1"></div>
+      <div class="building building-2"></div>
+      <div class="building building-3"></div>
+      <div class="building building-4"></div>
+      <div class="building building-5"></div>
+      
+      <div class="park park-1"></div>
+      <div class="park park-2"></div>
+      
+      <div class="water water-1"></div>
+      
+      <div class="target-location"></div>
+      <div class="location-label">创意工作室</div>
+      
+      <div class="compass">
+        <div class="compass-needle"></div>
+      </div>
+      
+      <div class="scale">
+        <div class="scale-bar"></div>
+        <span>500米</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

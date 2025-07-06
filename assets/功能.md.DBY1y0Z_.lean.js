@@ -1,0 +1,1 @@
+import{_ as l,c as i,o as n,ae as s}from"./chunks/framework.GJak29Hp.js";const c=JSON.parse('{"title":"个人工作室企业门户功能设计与架构规划","description":"","frontmatter":{},"headers":[],"relativePath":"功能.md","filePath":"功能.md"}'),r={name:"功能.md"};function t(o,a,e,h,g,u){return n(),i("div",null,a[0]||(a[0]=[s("",81)]))}const p=l(r,[["render",t]]);export{c as __pageData,p as default};

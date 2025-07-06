@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>创意工作室 Logo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+    }
+    .logo-container {
+      width: 200px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #3498db;
+      border-radius: 10px;
+      position: relative;
+      margin-right: 10px;
+    }
+    .logo-icon::before {
+      content: "C";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+    .logo-text {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+    .logo-text span {
+      color: #3498db;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <div class="logo-icon"></div>
+    <div class="logo-text">创意<span>工作室</span></div>
+  </div>
+</body>
+</html> 
