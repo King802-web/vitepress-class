@@ -2,7 +2,7 @@ services:
   - type: web
     name: vitepress-site
     env: static
-    buildCommand: npm install && npm run build
+    buildCommand: bash render-build.sh
     staticPublishPath: .vitepress/dist
     # 如果需要自定义域名，可以取消下面的注释并修改
     # domains:
@@ -12,4 +12,6 @@ services:
       - key: NODE_VERSION
         value: 18
       - key: NODE_ENV
-        value: production 
+        value: production
+      - key: RENDER
+        value: "true" 
