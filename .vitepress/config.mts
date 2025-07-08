@@ -6,7 +6,7 @@ import { defineConfig } from 'vitepress'
  */
 export default defineConfig({
   // 根据环境变量设置基本路径
-  base: process.env.VERCEL ? '/' : '/vitepress-class/',
+  base: process.env.VERCEL || process.env.RENDER ? '/' : '/vitepress-class/',
   // 忽略死链接检查，避免构建失败
   ignoreDeadLinks: true,
   

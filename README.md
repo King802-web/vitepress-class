@@ -61,28 +61,37 @@ npm run deploy:vercel:unix
    - Output Directory: .vitepress/dist
 5. 点击 "Deploy" 按钮
 
-#### 方法三：使用 Vercel CLI 部署
+### 部署到 Render
 
-1. 安装 Vercel CLI:
+#### 方法一：使用脚本部署
+
 ```bash
-npm install -g vercel
+# Windows
+npm run deploy:render:win
+# 或
+npm run deploy:render
+
+# Unix/Linux/macOS
+npm run deploy:render:unix
 ```
 
-2. 登录 Vercel:
-```bash
-vercel login
-```
+#### 方法二：通过 Render 平台部署
 
-3. 部署项目:
-```bash
-vercel --prod
-```
+1. 在 [Render](https://render.com) 注册账号并登录
+2. 点击 "New" 按钮，选择 "Static Site"
+3. 连接你的 GitHub 仓库
+4. 配置部署设置:
+   - Name: 你的项目名称
+   - Build Command: npm install && npm run build
+   - Publish Directory: .vitepress/dist
+5. 点击 "Create Static Site" 按钮
 
 ## 项目配置
 
 - 项目配置文件位于 `.vitepress/config.mts`
 - GitHub Pages 部署基路径: `/vitepress-class/`
 - Vercel 部署基路径: `/`
+- Render 部署基路径: `/`
 
 ## 注意事项
 

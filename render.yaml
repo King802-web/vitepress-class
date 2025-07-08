@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: vitepress-site
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: .vitepress/dist
+    # 如果需要自定义域名，可以取消下面的注释并修改
+    # domains:
+    #   - example.com
+    # 环境变量
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: NODE_ENV
+        value: production 

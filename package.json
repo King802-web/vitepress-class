@@ -17,7 +17,10 @@
     "deploy": "npm run deploy:win",
     "deploy:vercel:win": ".\\deploy-vercel.ps1",
     "deploy:vercel:unix": "bash deploy-vercel.sh",
-    "deploy:vercel": "npm run deploy:vercel:win"
+    "deploy:vercel": "npm run deploy:vercel:win",
+    "deploy:render:win": ".\\deploy-render.ps1",
+    "deploy:render:unix": "bash deploy-render.sh",
+    "deploy:render": "npm run deploy:render:win"
   },
   "engines": {
     "node": ">=18.0.0"
