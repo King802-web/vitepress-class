@@ -8,7 +8,7 @@
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
     "dev": "vitepress dev",
-    "build": "vitepress build",
+    "build": "npx vitepress build",
     "deploy:unix": "bash deploy.sh",
     "deploy:win": ".\\deploy.bat",
     "deploy": "npm run deploy:win",
