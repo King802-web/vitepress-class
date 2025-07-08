@@ -11,4 +11,4 @@ if (!(Get-Command vercel -ErrorAction SilentlyContinue)) {
 Write-Host "正在部署到Vercel..."
 vercel --prod
 
-Write-Host "部署完成！" 
+Write-Host "部署完成!" 
