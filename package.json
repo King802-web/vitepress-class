@@ -9,11 +9,15 @@
     "docs:preview": "vitepress preview",
     "dev": "vitepress dev",
     "build": "npx vitepress build",
+    "vercel-build": "node vercel-build.js",
     "deploy:unix": "bash deploy.sh",
     "deploy:win": ".\\deploy.bat",
     "deploy": "npm run deploy:win",
     "deploy:vercel:win": ".\\deploy-vercel.ps1",
     "deploy:vercel:unix": "bash deploy-vercel.sh",
     "deploy:vercel": "npm run deploy:vercel:win"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
