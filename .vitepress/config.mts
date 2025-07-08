@@ -5,8 +5,8 @@ import { defineConfig } from 'vitepress'
  * 本文件用于配置整个网站的基本设置、导航栏、侧边栏等全局元素
  */
 export default defineConfig({
-  // 设置基本路径，应该与GitHub仓库名称一致
-  base: '/vitepress-class/',
+  // 根据环境变量设置基本路径
+  base: process.env.VERCEL ? '/' : '/vitepress-class/',
   // 忽略死链接检查，避免构建失败
   ignoreDeadLinks: true,
   

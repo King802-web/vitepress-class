@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/node": "^20.11.0",
     "vitepress": "^1.6.3"
   },
   "scripts": {
@@ -10,6 +11,9 @@
     "build": "vitepress build",
     "deploy:unix": "bash deploy.sh",
     "deploy:win": ".\\deploy.bat",
-    "deploy": "npm run deploy:win"
+    "deploy": "npm run deploy:win",
+    "deploy:vercel:win": ".\\deploy-vercel.ps1",
+    "deploy:vercel:unix": "bash deploy-vercel.sh",
+    "deploy:vercel": "npm run deploy:vercel:win"
   }
 }
