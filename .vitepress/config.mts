@@ -1,10 +1,11 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
 /**
  * VitePress 站点配置文件
  * 本文件用于配置整个网站的基本设置、导航栏、侧边栏等全局元素
  */
-export default defineConfig({
+export default withMermaid(defineConfig({
   /**
    * 网站标题
    * 显示在浏览器标签页和首页标题中
@@ -16,6 +17,36 @@ export default defineConfig({
    * 用于SEO优化，显示在搜索引擎结果中
    */
   description: "教学创新平台和服务平台",
+   
+  /**
+   * Markdown配置
+   */
+  markdown: {
+    // 添加语法高亮支持
+    lineNumbers: true,
+    // 启用代码块中的行号
+    theme: {
+      light: 'github-light',
+      dark: 'github-dark'
+    }
+  },
+
+  /**
+   * 自定义Vue配置
+   */
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => ['iframe'].includes(tag)
+      }
+    }
+  },
+  
+  /**
+   * 头部脚本
+   * 用于在页面头部添加脚本
+   */
+  head: [],
   
   /**
    * 主题配置
@@ -144,9 +175,9 @@ export default defineConfig({
               items: [
                 { text: '概述', link: '/courses/pc-basics/hardware/' },
                 { text: '计算机组成原理概述', link: '/courses/pc-basics/hardware/overview' },
-                { text: 'CPU架构与工作原理', link: '/courses/pc-basics/hardware/cpu' },
-                { text: '内存类型与工作机制', link: '/courses/pc-basics/hardware/memory' },
-                { text: '存储设备', link: '/courses/pc-basics/hardware/storage' },
+                { text: 'CPU架构与工作原理', link: '/courses/pc-basics/hardware/cpu-architecture' },
+                { text: '内存类型与工作机制', link: '/courses/pc-basics/hardware/memory-types' },
+                { text: '存储设备', link: '/courses/pc-basics/hardware/storage-devices' },
                 { text: '主板与总线技术', link: '/courses/pc-basics/hardware/motherboard' },
                 { text: '显卡与图形处理', link: '/courses/pc-basics/hardware/gpu' },
                 { text: '输入输出设备', link: '/courses/pc-basics/hardware/io-devices' }
@@ -229,8 +260,25 @@ export default defineConfig({
      * 显示在网站底部的版权信息和备案号
      */
     footer: {
-      message: 'Copyright 2023 广东省机器人创新中心有限公司 All Rights Reserved',
+      message: 'Copyright 2023 江江创意工作室 All Rights Reserved',
       copyright: '粤ICP备20068987号'
     }
+  },
+  
+  /**
+   * Mermaid配置
+   */
+  mermaid: {
+    // 自定义mermaid配置
+    // 参考 https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults
+    theme: 'default',
+  },
+  
+  /**
+   * Mermaid插件配置
+   */
+  mermaidPlugin: {
+    // 为mermaid容器添加额外的CSS类
+    class: 'mermaid-diagram'
   }
-})
+}))

@@ -311,3 +311,74 @@
 .contact-form button:hover {
   background-color: var(--vp-c-brand-light); /* 亮品牌色 */
 } 
+
+/* 添加mermaid相关样式 */
+.mermaid {
+  text-align: center;
+  margin: 1rem 0;
+  overflow-x: auto; /* 添加水平滚动以处理宽图表 */
+}
+
+/* 错误提示样式 */
+.mermaid-error {
+  color: red;
+  padding: 1rem;
+  border: 1px solid #f88;
+  background-color: #fee;
+  border-radius: 4px;
+}
+
+/* 修改代码块样式，确保mermaid代码块能够被正确识别 */
+div[class*='language-mermaid'] {
+  position: relative;
+}
+
+div[class*='language-mermaid']:before {
+  content: 'mermaid';
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  z-index: 2;
+  color: #888;
+} 
+
+/* Mermaid图表样式 */
+.mermaid-diagram {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.mermaid-diagram svg {
+  max-width: 100%;
+} 
+
+/* ===== 哔哩哔哩视频嵌入样式 ===== */
+/**
+ * 哔哩哔哩视频容器样式
+ * 创建响应式视频容器，保持16:9或4:3的宽高比
+ */
+.bilibili-video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9比例 */
+  margin: 20px 0;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/**
+ * 哔哩哔哩视频iframe样式
+ * 确保iframe填充整个容器
+ */
+.bilibili-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+} 

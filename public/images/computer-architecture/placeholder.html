@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>计算机组成原理图片占位符</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      text-align: center;
+      color: #0066cc;
+    }
+    
+    .image-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    
+    canvas {
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+    }
+    
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    button {
+      padding: 8px 16px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background: #0055aa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>计算机组成原理图片生成器</h1>
+    
+    <div class="image-container">
+      <canvas id="vonNeumannCanvas" width="800" height="400"></canvas>
+      <p>冯·诺依曼架构图</p>
+    </div>
+    
+    <div class="image-container">
+      <canvas id="historyCanvas" width="800" height="400"></canvas>
+      <p>计算机发展历程图</p>
+    </div>
+    
+    <div class="image-container">
+      <canvas id="binaryCanvas" width="800" height="400"></canvas>
+      <p>二进制数据表示图</p>
+    </div>
+    
+    <div class="image-container">
+      <canvas id="hierarchyCanvas" width="800" height="400"></canvas>
+      <p>计算机系统层次结构图</p>
+    </div>
+    
+    <div class="image-container">
+      <canvas id="performanceCanvas" width="800" height="400"></canvas>
+      <p>性能优化图</p>
+    </div>
+    
+    <div class="button-container">
+      <button onclick="generateAllImages()">生成所有图片</button>
+      <button onclick="downloadAllImages()">下载所有图片</button>
+    </div>
+  </div>
+
+  <script>
+    // 页面加载时自动生成图片
+    window.onload = function() {
+      generateAllImages();
+    };
+    
+    // 生成所有图片
+    function generateAllImages() {
+      generateVonNeumann();
+      generateHistory();
+      generateBinary();
+      generateHierarchy();
+      generatePerformance();
+    }
+    
+    // 生成冯·诺依曼架构图
+    function generateVonNeumann() {
+      const canvas = document.getElementById('vonNeumannCanvas');
+      const ctx = canvas.getContext('2d');
+      
+      // 清空画布
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // 设置背景色
+      ctx.fillStyle = '#f0f8ff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // 绘制标题
+      ctx.fillStyle = '#003366';
+      ctx.font = 'bold 32px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('冯·诺依曼架构', canvas.width/2, 50);
+      
+      // 绘制中央处理单元框
+      drawComponent(ctx, canvas.width/2, 180, 300, 100, '#4682b4', '中央处理单元 (CPU)');
+      
+      // 绘制控制器和运算器
+      drawComponent(ctx, canvas.width/2 - 80, 180, 140, 60, '#6495ed', '控制器');
+      drawComponent(ctx, canvas.width/2 + 80, 180, 140, 60, '#6495ed', '运算器');
+      
+      // 绘制存储器
+      drawComponent(ctx, canvas.width/2, 320, 300, 80, '#20b2aa', '存储器');
+      
+      // 绘制输入设备
+      drawComponent(ctx, canvas.width/2 - 200, 450, 140, 80, '#3cb371', '输入设备');
+      
+      // 绘制输出设备
+      drawComponent(ctx, canvas.width/2 + 200, 450, 140, 80, '#ff7f50', '输出设备');
+      
+      // 绘制连接线
+      ctx.strokeStyle = '#666';
+      ctx.lineWidth = 3;
+      
+      // CPU到存储器的连接
+      drawArrow(ctx, canvas.width/2, 230, canvas.width/2, 280);
+      
+      // 存储器到输入/输出设备的连接
+      drawArrow(ctx, canvas.width/2, 360, canvas.width/2, 400);
+      drawArrow(ctx, canvas.width/2, 400, canvas.width/2 - 200, 450);
+      drawArrow(ctx, canvas.width/2, 400, canvas.width/2 + 200, 450);
+    }
+    
+    // 生成计算机发展历程图
+    function generateHistory() {
+      const canvas = document.getElementById('historyCanvas');
+      const ctx = canvas.getContext('2d');
+      
+      // 清空画布
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // 设置背景色
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+      gradient.addColorStop(0, '#f0f8ff');
+      gradient.addColorStop(1, '#e6e6fa');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // 绘制标题
+      ctx.fillStyle = '#003366';
+      ctx.font = 'bold 32px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('计算机发展历程', canvas.width/2, 50);
+      
+      // 绘制时间轴
+      ctx.strokeStyle = '#666';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(100, 200);
+      ctx.lineTo(700, 200);
+      ctx.stroke();
+      
+      // 绘制时间节点
+      const timePoints = [
+        { year: '1946', label: '第一代', desc: 'ENIAC', color: '#4682b4', x: 150 },
+        { year: '1958', label: '第二代', desc: '晶体管计算机', color: '#20b2aa', x: 300 },
+        { year: '1965', label: '第三代', desc: '集成电路', color: '#3cb371', x: 450 },
+        { year: '1972', label: '第四代', desc: '微处理器', color: '#ff7f50', x: 600 }
+      ];
+      
+      timePoints.forEach(point => {
+        // 绘制时间节点圆圈
+        ctx.fillStyle = point.color;
+        ctx.beginPath();
+        ctx.arc(point.x, 200, 15, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // 绘制年份
+        ctx.fillStyle = '#333';
+        ctx.font = 'bold 16px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText(point.year, point.x, 230);
+        
+        // 绘制上方标签
+        ctx.fillStyle = point.color;
+        ctx.font = 'bold 18px Arial';
+        ctx.fillText(point.label, point.x, 170);
+        
+        // 绘制下方描述
+        ctx.fillStyle = '#333';
+        ctx.font = '16px Arial';
+        ctx.fillText(point.desc, point.x, 260);
+      });
+      
+      // 添加摩尔定律标注
+      ctx.fillStyle = 'rgba(255, 99, 71, 0.2)';
+      ctx.beginPath();
+      ctx.moveTo(450, 300);
+      ctx.lineTo(700, 150);
+      ctx.lineTo(700, 300);
+      ctx.closePath();
+      ctx.fill();
+      
+      ctx.fillStyle = '#ff6347';
+      ctx.font = 'italic 16px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('摩尔定律', 600, 180);
+    }
+    
+    // 生成二进制数据表示图
+    function generateBinary() {
+      const canvas = document.getElementById('binaryCanvas');
+      const ctx = canvas.getContext('2d');
+      
+      // 清空画布
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // 设置背景色
+      ctx.fillStyle = '#f9f9f9';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // 绘制标题
+      ctx.fillStyle = '#003366';
+      ctx.font = 'bold 32px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('二进制数据表示', canvas.width/2, 50);
+      
+      // 绘制二进制示例
+      ctx.fillStyle = '#333';
+      ctx.font = 'bold 20px Courier New';
+      ctx.textAlign = 'center';
+      
+      const binaryText = "01001000 01100101 01101100 01101100 01101111";
+      ctx.fillText(binaryText, canvas.width/2, 120);
+      
+      // 绘制ASCII对应
+      ctx.fillStyle = '#0066cc';
+      ctx.font = 'bold 24px Arial';
+      ctx.fillText("H    e    l    l    o", canvas.width/2, 160);
+      
+      // 绘制不同数据表示方式
+      const representations = [
+        { label: "无符号整数", value: "01001000 = 72" },
+        { label: "有符号整数(补码)", value: "10110111 = -73" },
+        { label: "浮点数(IEEE 754)", value: "0 10000000 10010000... = 3.125" },
+        { label: "字符编码(ASCII/Unicode)", value: "01000001 = 'A'" }
+      ];
+      
+      representations.forEach((rep, index) => {
+        const y = 220 + index * 60;
+        
+        // 绘制标签
+        ctx.fillStyle = '#333';
+        ctx.font = 'bold 18px Arial';
+        ctx.textAlign = 'left';
+        ctx.fillText(rep.label + ":", 200, y);
+        
+        // 绘制值
+        ctx.fillStyle = '#0066cc';
+        ctx.font = '18px Courier New';
+        ctx.fillText(rep.value, 400, y);
+      });
+    }
+    
+    // 生成计算机系统层次结构图
+    function generateHierarchy() {
+      const canvas = document.getElementById('hierarchyCanvas');
+      const ctx = canvas.getContext('2d');
+      
+      // 清空画布
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // 设置背景色
+      ctx.fillStyle = '#f9f9f9';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // 绘制标题
+      ctx.fillStyle = '#003366';
+      ctx.font = 'bold 32px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('计算机系统层次结构', canvas.width/2, 50);
+      
+      // 定义层次结构
+      const levels = [
+        { label: '应用软件层', color: '#9370db', examples: '文字处理器、浏览器、游戏' },
+        { label: '操作系统层', color: '#4682b4', examples: 'Windows、Linux、macOS' },
+        { label: '指令集架构层', color: '#20b2aa', examples: 'x86、ARM、RISC-V' },
+        { label: '微架构层', color: '#3cb371', examples: '流水线、缓存、分支预测' },
+        { label: '逻辑电路层', color: '#ff7f50', examples: '加法器、寄存器、多路复用器' },
+        { label: '晶体管层', color: '#ff6347', examples: 'CMOS晶体管、逻辑门' }
+      ];
+      
+      // 绘制金字塔
+      const pyramidWidth = 600;
+      const pyramidHeight = 300;
+      const pyramidTop = 100;
+      const levelHeight = pyramidHeight / levels.length;
+      
+      levels.forEach((level, index) => {
+        // 计算当前层的宽度（金字塔从上到下变宽）
+        const widthRatio = 0.3 + 0.7 * (index / (levels.length - 1));
+        const currentWidth = pyramidWidth * widthRatio;
+        const x = (canvas.width - currentWidth) / 2;
+        const y = pyramidTop + index * levelHeight;
+        
+        // 绘制层次矩形
+        ctx.fillStyle = level.color;
+        ctx.fillRect(x, y, currentWidth, levelHeight);
+        
+        // 绘制边框
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(x, y, currentWidth, levelHeight);
+        
+        // 绘制层次标签
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 18px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText(level.label, canvas.width/2, y + levelHeight/2);
+        
+        // 绘制示例
+        ctx.fillStyle = '#333';
+        ctx.font = '14px Arial';
+        ctx.textAlign = 'left';
+        ctx.fillText(level.examples, x + 10, y + levelHeight - 10);
+      });
+    }
+    
+    // 生成性能优化图
+    function generatePerformance() {
+      const canvas = document.getElementById('performanceCanvas');
+      const ctx = canvas.getContext('2d');
+      
+      // 清空画布
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // 设置背景色
+      ctx.fillStyle = '#f9f9f9';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // 绘制标题
+      ctx.fillStyle = '#003366';
+      ctx.font = 'bold 32px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('计算机系统性能优化', canvas.width/2, 50);
+      
+      // 绘制性能因素图
+      const factors = [
+        { label: 'CPU性能', value: 80, color: '#4682b4' },
+        { label: '内存带宽', value: 60, color: '#20b2aa' },
+        { label: '存储速度', value: 40, color: '#3cb371' },
+        { label: '网络延迟', value: 30, color: '#ff7f50' },
+        { label: '算法效率', value: 70, color: '#9370db' }
+      ];
+      
+      // 绘制柱状图
+      const barWidth = 80;
+      const barSpacing = 60;
+      const barBottom = 350;
+      const maxBarHeight = 200;
+      
+      factors.forEach((factor, index) => {
+        const x = 150 + index * (barWidth + barSpacing);
+        const barHeight = (factor.value / 100) * maxBarHeight;
+        
+        // 绘制柱子
+        ctx.fillStyle = factor.color;
+        ctx.fillRect(x, barBottom - barHeight, barWidth, barHeight);
+        
+        // 绘制边框
+        ctx.strokeStyle = '#333';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(x, barBottom - barHeight, barWidth, barHeight);
+        
+        // 绘制标签
+        ctx.fillStyle = '#333';
+        ctx.font = '16px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText(factor.label, x + barWidth/2, barBottom + 25);
+        
+        // 绘制数值
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 16px Arial';
+        ctx.fillText(factor.value + '%', x + barWidth/2, barBottom - barHeight/2);
+      });
+    }
+    
+    // 辅助函数：绘制组件
+    function drawComponent(ctx, x, y, width, height, color, label) {
+      // 绘制矩形
+      ctx.fillStyle = color;
+      ctx.strokeStyle = '#333';
+      ctx.lineWidth = 2;
+      
+      // 绘制圆角矩形
+      const radius = 10;
+      ctx.beginPath();
+      ctx.moveTo(x - width/2 + radius, y - height/2);
+      ctx.lineTo(x + width/2 - radius, y - height/2);
+      ctx.arcTo(x + width/2, y - height/2, x + width/2, y - height/2 + radius, radius);
+      ctx.lineTo(x + width/2, y + height/2 - radius);
+      ctx.arcTo(x + width/2, y + height/2, x + width/2 - radius, y + height/2, radius);
+      ctx.lineTo(x - width/2 + radius, y + height/2);
+      ctx.arcTo(x - width/2, y + height/2, x - width/2, y + height/2 - radius, radius);
+      ctx.lineTo(x - width/2, y - height/2 + radius);
+      ctx.arcTo(x - width/2, y - height/2, x - width/2 + radius, y - height/2, radius);
+      ctx.closePath();
+      
+      ctx.fill();
+      ctx.stroke();
+      
+      // 绘制标签
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 16px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(label, x, y);
+    }
+    
+    // 辅助函数：绘制箭头
+    function drawArrow(ctx, fromX, fromY, toX, toY) {
+      const headLength = 15;
+      const angle = Math.atan2(toY - fromY, toX - fromX);
+      
+      // 绘制线条
+      ctx.beginPath();
+      ctx.moveTo(fromX, fromY);
+      ctx.lineTo(toX, toY);
+      ctx.stroke();
+      
+      // 绘制箭头头部
+      ctx.beginPath();
+      ctx.moveTo(toX, toY);
+      ctx.lineTo(toX - headLength * Math.cos(angle - Math.PI/6), toY - headLength * Math.sin(angle - Math.PI/6));
+      ctx.lineTo(toX - headLength * Math.cos(angle + Math.PI/6), toY - headLength * Math.sin(angle + Math.PI/6));
+      ctx.closePath();
+      ctx.fillStyle = ctx.strokeStyle;
+      ctx.fill();
+    }
+    
+    // 下载所有图片
+    function downloadAllImages() {
+      downloadCanvas('vonNeumannCanvas', 'von-neumann-architecture.png');
+      downloadCanvas('historyCanvas', 'computer-history.png');
+      downloadCanvas('binaryCanvas', 'binary-representation.png');
+      downloadCanvas('hierarchyCanvas', 'computer-hierarchy.png');
+      downloadCanvas('performanceCanvas', 'performance-optimization.png');
+    }
+    
+    // 下载Canvas为图片
+    function downloadCanvas(canvasId, filename) {
+      const canvas = document.getElementById(canvasId);
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = canvas.toDataURL('image/png', 0.8);
+      link.click();
+    }
+  </script>
+</body>
+</html> 

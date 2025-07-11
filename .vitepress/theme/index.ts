@@ -9,6 +9,8 @@ import { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 // 导入自定义CSS样式文件
 import './custom.css'
+// 导入哔哩哔哩视频组件
+import BilibiliVideo from './components/BilibiliVideo.vue'
 
 /**
  * 导出主题配置对象
@@ -29,13 +31,9 @@ export default {
    * @param siteData 站点元数据，包含网站配置和页面信息
    */
   enhanceApp({ app, router, siteData }) {
-    /**
-     * 这里可以添加自定义主题逻辑，例如：
-     * 1. 注册全局组件: app.component('MyComponent', MyComponent)
-     * 2. 添加路由钩子: router.onBeforeRouteChange = (to) => { ... }
-     * 3. 注册插件: app.use(MyPlugin)
-     * 4. 添加全局状态: app.provide('myKey', myValue)
-     * 5. 添加自定义指令: app.directive('my-directive', { ... })
-     */
+    // vitepress-plugin-mermaid 插件会自动处理mermaid图表的渲染
+    
+    // 注册哔哩哔哩视频组件
+    app.component('BilibiliVideo', BilibiliVideo)
   }
 } satisfies Theme // 使用类型约束确保配置符合Theme接口 
